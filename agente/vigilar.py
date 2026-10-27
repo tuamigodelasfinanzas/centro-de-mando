@@ -458,7 +458,8 @@ def instagram(p, cuantas=8):
                         _CUENTAS_META[c["username"].lower()] = c["id"]
             usuario = _CUENTAS_META.get(p["instagram"].lower(), "")
             if not usuario:
-                return None, f"El token de Meta no da acceso a @{p['instagram']} (al generarlo, marca su página y su cuenta de Instagram)"
+                vistas = ", ".join("@" + u for u in _CUENTAS_META) or "ninguna"
+                return None, f"El token de Meta no da acceso a @{p['instagram']}. Cuentas que sí ve: {vistas}. Al generarlo, marca también su página de Facebook y su cuenta de Instagram"
         if not usuario:
             usuario = get("me", fields="user_id,id").get("user_id") or get("me", fields="id")["id"]
         cuenta = get(usuario, fields="username,followers_count,media_count")
@@ -467,6 +468,7 @@ def instagram(p, cuantas=8):
     except ErrorHTTP as e:
         return None, f"Instagram de {p['nombre']}: {limpiar(e)[:160]}"
     pubs = []
+    error_metricas = ""
     for m in media:
         fila = {"tipo": {"VIDEO": "Reel", "CAROUSEL_ALBUM": "Carrusel", "IMAGE": "Imagen"}.get(m.get("media_type"), m.get("media_type")),
                 "fecha": m.get("timestamp"), "texto": (m.get("caption") or "").split("\n")[0][:120], "enlace": m.get("permalink"),
@@ -479,9 +481,11 @@ def instagram(p, cuantas=8):
                 for x in get(f"{m['id']}/insights", metric=s).get("data", []):
                     fila[NOMBRES_IG.get(x["name"], x["name"])] = (x.get("values") or [{}])[0].get("value", 0)
                 break
-            except ErrorHTTP:
+            except ErrorHTTP as e:
+                error_metricas = limpiar(e)[:200]
                 continue
         pubs.append(fila)
     return {"usuario": cuenta.get("username"), "seguidores": cuenta.get("followers_count"),
             "total": cuenta.get("media_count"), "publicaciones": pubs, "leido": iso(ahora()),
-            "token_caduca": iso(datetime.fromtimestamp(caduca, timezone.utc)) if caduca else None}, None
+            "token_caduca": iso(datetime.fromtimestamp(caduca, timezone.utc)) if caduca else None,
+            "error_metricas": error_metricas if not any("alcance" in x or "vistas" in x for x in pubs) else ""}, None
