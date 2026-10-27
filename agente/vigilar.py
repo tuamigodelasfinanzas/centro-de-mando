@@ -4,6 +4,7 @@ Nunca cambia nada por su cuenta: cada arreglo se te propone por Telegram con un 
 cuando lo apruebas (eso lo ejecuta bot.py).
 """
 import hashlib
+from datetime import datetime, timezone
 import time
 from collections import defaultdict
 from datetime import timedelta
@@ -205,9 +206,7 @@ def construir_estado(datos, por_proyecto, cred, propuestas):
         gh_agenda, err = agenda_github(p)
         if err:
             datos["errores"].append(err)
-        ig, err = instagram(p)
-        if err:
-            datos["errores"].append(err)
+        ig = datos.get("ig", {}).get(p["id"])
         prox = sorted(prox + [{"nombre": g["nombre"], "proxima": g["cuando"]} for g in gh_agenda if g["activo"]],
                       key=lambda e: e["proxima"])
         salida.append({
@@ -338,6 +337,21 @@ def vigilar(forzar_resumen=False):
         incidencias.append({"proyecto": None, "nivel": nivel, "texto": f"Llevas el {cred['pct']} % de los créditos de Make del mes",
                             "clave": f"make:creditos:{ahora().strftime('%Y-%m')}:{cred['pct'] // 5}", "accion": None,
                             "error": None, "enlace": None})
+    datos["ig"] = {}
+    for p in proyectos():
+        ig, err = instagram(p)
+        datos["ig"][p["id"]] = ig
+        if err:
+            i = {"proyecto": p["id"], "nivel": "rojo", "texto": f"Instagram de {p['nombre']}: el token no funciona",
+                 "clave": f"ig:token:{p['id']}:{ahora().strftime('%Y-%m-%d')}", "accion": None, "error": err, "enlace": None}
+            incidencias.append(i); por_proyecto[p["id"]]["incid"].append(i)
+        elif ig and ig.get("token_caduca"):
+            dias = (leer_fecha(ig["token_caduca"]) - ahora()).days
+            if dias < 7:
+                i = {"proyecto": p["id"], "nivel": "rojo" if dias < 2 else "ambar",
+                     "texto": f"El token de Instagram de {p['nombre']} caduca en {max(dias, 0)} días: renuévalo en su repo y aquí",
+                     "clave": f"ig:caduca:{p['id']}:{ig['token_caduca'][:10]}:{dias < 2}", "accion": None, "error": None, "enlace": None}
+                incidencias.append(i); por_proyecto[p["id"]]["incid"].append(i)
     caducar(propuestas, tg)
     nuevas = proponer(incidencias, propuestas, tg)
     estado = construir_estado(datos, por_proyecto, cred, propuestas)
@@ -420,6 +434,16 @@ def instagram(p, cuantas=8):
         q["access_token"] = token
         return http("GET", f"{api}/{ruta}?{urllib.parse.urlencode(q)}", intentos=2)
 
+    caduca = None
+    if api.startswith("https://graph.facebook.com"):
+        try:
+            d = get("debug_token", input_token=token).get("data", {})
+            if d.get("is_valid") is False:
+                return None, f"El token de Instagram de {p['nombre']} NO es válido: {limpiar(d.get('error', {}).get('message', ''))[:120]}"
+            if d.get("expires_at"):
+                caduca = int(d["expires_at"])
+        except ErrorHTTP:
+            pass
     try:
         usuario = os.environ.get(f"IG_USER_{p['id'].upper()}", "").strip() or p.get("ig_user") or ""
         if not usuario:
@@ -446,4 +470,5 @@ def instagram(p, cuantas=8):
                 continue
         pubs.append(fila)
     return {"usuario": cuenta.get("username"), "seguidores": cuenta.get("followers_count"),
-            "total": cuenta.get("media_count"), "publicaciones": pubs, "leido": iso(ahora())}, None
+            "total": cuenta.get("media_count"), "publicaciones": pubs, "leido": iso(ahora()),
+            "token_caduca": iso(datetime.fromtimestamp(caduca, timezone.utc)) if caduca else None}, None
