@@ -414,7 +414,7 @@ function evento(x, conDia){
 const nf = n => n == null ? "—" : n >= 10000 ? (n/1000).toLocaleString("es-ES",{maximumFractionDigits:1}) + " mil" : n.toLocaleString("es-ES");
 function publicaciones(p){
   const ig = p.instagram_datos;
-  if (!ig) return `<div class="ig"><div class="ig-h" style="display:block;line-height:1.45">Para ver aquí las publicaciones y sus vistas, guarda el token de Instagram de esta cuenta en GitHub como <b style="font-size:13px">IG_TOKEN_${p.id.toUpperCase()}</b>.</div></div>`;
+  if (!ig) return `<div class="ig"><div class="ig-h" style="display:block;line-height:1.45">Para ver aquí las publicaciones y sus vistas, guarda tu token de Meta en GitHub como <b style="font-size:13px">META_TOKEN</b>.</div></div>`;
   const posts = ig.publicaciones || [];
   return `<div class="ig">
     <div class="ig-h"><span><b>${nf(ig.seguidores)}</b> seguidores · ${nf(ig.total)} publicaciones</span><span>leído ${hace(ig.leido)}</span></div>
