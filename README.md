@@ -55,8 +55,8 @@ GitHub → Settings → Developer settings → Fine-grained tokens → Generate 
 **4. (Opcional) Explicaciones claras** → secret **`GEMINI_API_KEY`**
 La misma clave de Google AI Studio que ya usas en resumen-bolsa-reel.
 
-**5. (Opcional) Publicaciones y vistas en el panel** → secrets **`IG_TOKEN_FINANZAS`**, **`IG_TOKEN_PIN`**, **`IG_TOKEN_MAYORES`**
-El mismo token de Instagram que tiene cada repo de proyecto (secret `IG_ACCESS_TOKEN`). Con él, al tocar el nombre de un proyecto en el panel se despliegan sus últimas publicaciones con vistas, alcance, me gusta y guardados. Si el token empieza por `EAA` (de Facebook), añade también `IG_USER_PIN` / `IG_USER_MAYORES` con el número de la cuenta de Instagram.
+**5. Publicaciones, vistas y vigilancia de Instagram** → secret **`META_TOKEN`**
+Un único token de Meta sirve para todas las cuentas. Graph API Explorer (developers.facebook.com/tools/explorer) → tu app → *Get User Access Token* con `instagram_basic`, `instagram_manage_insights`, `pages_show_list`, `pages_read_engagement` y `business_management`, marcando todas tus páginas y cuentas. Después, en el Access Token Debugger, *Extend Access Token* para que dure 60 días. El agente te avisa 7 días antes de que caduque.
 
 **6. Panel web**
 Settings → Pages → *Deploy from a branch* → `main` / `(root)` → Save.

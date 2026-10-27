@@ -417,6 +417,7 @@ def agenda_github(p, dias=3):
     return salida, None
 
 
+_CUENTAS_META = None
 SETS_IG = ["reach,saved,shares,total_interactions,views", "reach,saved,shares,total_interactions", "reach,saved,shares", "reach"]
 NOMBRES_IG = {"reach": "alcance", "saved": "guardados", "shares": "compartidos", "views": "vistas", "total_interactions": "interacciones"}
 
@@ -425,8 +426,8 @@ def instagram(p, cuantas=8):
     """Últimas publicaciones de la cuenta con sus vistas. Token en el secret IG_TOKEN_<PROYECTO> (p. ej. IG_TOKEN_FINANZAS)."""
     import os
     import urllib.parse
-    token = os.environ.get(f"IG_TOKEN_{p['id'].upper()}", "").strip().strip("\"'")
-    if not token:
+    token = (os.environ.get(f"IG_TOKEN_{p['id'].upper()}", "") or os.environ.get("META_TOKEN", "")).strip().strip("\"'")
+    if not token or not p.get("instagram"):
         return None, None
     api = "https://graph.instagram.com/v21.0" if token.startswith("IG") else "https://graph.facebook.com/v21.0"
 
@@ -446,6 +447,18 @@ def instagram(p, cuantas=8):
             pass
     try:
         usuario = os.environ.get(f"IG_USER_{p['id'].upper()}", "").strip() or p.get("ig_user") or ""
+        if not usuario and api.startswith("https://graph.facebook.com"):
+            # un solo token de Meta sirve para todas las cuentas: se busca la de este proyecto por su @usuario
+            global _CUENTAS_META
+            if _CUENTAS_META is None:
+                _CUENTAS_META = {}
+                for pg in get("me/accounts", fields="instagram_business_account{id,username}", limit=100).get("data", []):
+                    c = pg.get("instagram_business_account") or {}
+                    if c.get("username"):
+                        _CUENTAS_META[c["username"].lower()] = c["id"]
+            usuario = _CUENTAS_META.get(p["instagram"].lower(), "")
+            if not usuario:
+                return None, f"El token de Meta no da acceso a @{p['instagram']} (al generarlo, marca su página y su cuenta de Instagram)"
         if not usuario:
             usuario = get("me", fields="user_id,id").get("user_id") or get("me", fields="id")["id"]
         cuenta = get(usuario, fields="username,followers_count,media_count")

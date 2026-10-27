@@ -46,6 +46,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          META_TOKEN: ${{ secrets.META_TOKEN }}
           IG_TOKEN_FINANZAS: ${{ secrets.IG_TOKEN_FINANZAS }}
           IG_TOKEN_PIN: ${{ secrets.IG_TOKEN_PIN }}
           IG_TOKEN_MAYORES: ${{ secrets.IG_TOKEN_MAYORES }}
