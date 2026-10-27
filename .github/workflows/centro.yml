@@ -1,0 +1,62 @@
+name: Centro de mando
+
+# Cada 10 minutos atiende tu Telegram (aprobaciones, comandos, preguntas).
+# Una vez por hora vigila Make y los 4 repos, propone arreglos y actualiza el panel.
+# A partir de las 08:00 (Madrid) manda el resumen del día, una vez.
+# El estado (panel, propuestas, historial) se guarda en la rama "estado", no en main.
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: "ciclo (normal), vigilar (vigilar ya) o resumen (vigilar y mandar el resumen)"
+        default: vigilar
+        type: choice
+        options: [ciclo, vigilar, resumen]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: centro-de-mando
+  cancel-in-progress: false
+
+jobs:
+  centro:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Traer el estado guardado
+        run: |
+          mkdir -p estado
+          if git fetch --depth 1 origin estado 2>/dev/null; then
+            git --work-tree=estado checkout FETCH_HEAD -- . 2>/dev/null || true
+            git reset -q
+          fi
+          ls estado
+
+      - name: Atender y vigilar
+        env:
+          MAKE_API_TOKEN: ${{ secrets.MAKE_API_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ github.token }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CENTRO_ESTADO: ${{ github.workspace }}/estado
+        run: python3 agente/main.py "${{ inputs.modo || 'ciclo' }}"
+
+      - name: Guardar el estado
+        if: always()
+        run: |
+          cd estado
+          [ -n "$(ls -A)" ] || exit 0
+          git init -q -b estado
+          git config user.name "centro-de-mando"
+          git config user.email "centro-de-mando@users.noreply.github.com"
+          git add -A
+          git commit -qm "Estado $(TZ=Europe/Madrid date '+%d/%m %H:%M')"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" estado

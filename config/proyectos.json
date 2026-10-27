@@ -1,0 +1,50 @@
+{
+  "make": {
+    "zona": "eu1",
+    "organizacion": 8964207,
+    "equipo": 2762258,
+    "creditos_mes": 10000
+  },
+  "proyectos": [
+    {
+      "id": "finanzas",
+      "nombre": "Tu Amigo de las Finanzas",
+      "emoji": "💶",
+      "instagram": "tuamigodelasfinanzas",
+      "carpeta_make": 408152,
+      "repo": "tuamigodelasfinanzas/resumen-bolsa-reel",
+      "prefijos": ["RESUMEN BOLSA", "CARRUSEL", "HISTORIA", "REEL", "AVISO TikTok", "EN 30 SEGUNDOS", "INFORME", "PLANNING", "IMPORTAR_STOCKS"],
+      "alias": ["finanzas", "tuamigo", "amigo", "bolsa", "tadf"]
+    },
+    {
+      "id": "pin",
+      "nombre": "Planet in Numbers",
+      "emoji": "🌍",
+      "instagram": "theplanetinnumbers",
+      "carpeta_make": 407346,
+      "repo": "tuamigodelasfinanzas/planet-in-numbers",
+      "prefijos": ["PIN ·"],
+      "alias": ["pin", "planet", "planeta"]
+    },
+    {
+      "id": "mayores",
+      "nombre": "Cosas de Mayores",
+      "emoji": "🧒",
+      "instagram": "cosasdemayores.tv",
+      "carpeta_make": 408847,
+      "repo": "tuamigodelasfinanzas/No-Entiendo-a-los-Mayores",
+      "prefijos": ["No Entiendo a los Mayores", "Cosas de Mayores", "MAYORES ·"],
+      "alias": ["mayores", "cosas", "cdm", "no entiendo"]
+    },
+    {
+      "id": "zero",
+      "nombre": "Zero Understands",
+      "emoji": "🤖",
+      "instagram": "",
+      "carpeta_make": 408147,
+      "repo": "tuamigodelasfinanzas/zero-understands",
+      "prefijos": ["ZERO ·"],
+      "alias": ["zero", "zu"]
+    }
+  ]
+}
