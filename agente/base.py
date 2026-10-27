@@ -206,6 +206,7 @@ class Telegram:
     def __init__(self):
         self.token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
         self.chat = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
+        self.ultimo_error = ""
 
     @property
     def listo(self):
@@ -219,6 +220,7 @@ class Telegram:
             return http("POST", f"https://api.telegram.org/bot{self.token}/{metodo}", cuerpo=datos, intentos=2)
         except ErrorHTTP as e:
             print(f"::warning::Telegram {metodo}: {e}")
+            self.ultimo_error = f"{metodo}: {e}"
             return {}
 
     def enviar(self, texto, botones=None):

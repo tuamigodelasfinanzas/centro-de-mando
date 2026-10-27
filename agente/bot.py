@@ -240,14 +240,20 @@ def procesar_boton(cq, tg, propuestas):
 def atender():
     """Procesa todo lo que te haya llegado por Telegram desde la última vez."""
     tg = Telegram()
+    control = cargar("control.json", {})
     if not tg.token:
         print("Sin TELEGRAM_BOT_TOKEN: el bot no se atiende.")
+        control["telegram"] = "falta el secret TELEGRAM_BOT_TOKEN"
+        guardar("control.json", control)
         return 0
-    control = cargar("control.json", {})
     propuestas = cargar("propuestas.json", {})
     r = tg.llamar("getUpdates", offset=control.get("offset", 0), timeout=0,
                   allowed_updates=["message", "callback_query"])
     n = 0
+    if not r.get("ok"):
+        control["telegram"] = f"Telegram no respondió bien: {tg.ultimo_error or r}"
+    else:
+        control["telegram"] = f"ok · {len(r.get('result', []))} novedades · chat {'configurado' if tg.chat else 'SIN configurar'} · {iso(ahora())}"
     for u in r.get("result", []):
         control["offset"] = u["update_id"] + 1
         chat = str(((u.get("message") or {}).get("chat") or (u.get("callback_query") or {}).get("message", {}).get("chat") or {}).get("id", ""))
