@@ -29,6 +29,7 @@
   --c-finanzas:#5cc293; --c-pin:#6f9fef; --c-mayores:#ec9459; --c-zero:#b394ea; color-scheme:dark}
 
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html,body{margin:0}
 body{background:var(--bg);color:var(--ink);font:15px/1.45 var(--f-body);-webkit-font-smoothing:antialiased;
   padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 8px)}
@@ -305,7 +306,7 @@ function agenda(s){
   }
   return out.sort((a,b) => a.cuando.localeCompare(b.cuando));
 }
-const limpiaNombre = n => n.replace(/\s*\([^)]*\)\s*$/,"").replace(/^(CARRUSEL|HISTORIA|REEL)\s+/i,"").replace(/^PIN · /,"").replace(/^ZERO · /,"");
+const limpiaNombre = n => { const t = n.replace(/\s*\([^)]*\)\s*$/,"").replace(/^(CARRUSEL|HISTORIA|REEL)\s+/i,"").replace(/^PIN · /,"").replace(/^ZERO · /,""); return t.charAt(0).toUpperCase() + t.slice(1); };
 const capital = t => t.charAt(0).toUpperCase() + t.slice(1);
 
 function pintar(){
