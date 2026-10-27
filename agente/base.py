@@ -137,7 +137,20 @@ class Make:
         return [x for x in logs if x.get("eventType") == "EXECUTION_END"]
 
     def organizacion(self):
-        return self.get(f"/organizations/{CONFIG['make']['organizacion']}").get("organization", {})
+        org = self.get(f"/organizations/{CONFIG['make']['organizacion']}").get("organization", {})
+        # consumo diario de los últimos 30 días: se suma lo de este mes
+        try:
+            uso = self.get(f"/organizations/{CONFIG['make']['organizacion']}/usage")
+            dias = uso.get("data", uso if isinstance(uso, list) else [])
+            mes = ahora().strftime("%Y-%m")
+            del_mes = [d for d in dias if str(d.get("date", "")).startswith(mes)]
+            if any("centicredits" in d for d in del_mes):
+                org["_usados"] = sum(d.get("centicredits", 0) for d in del_mes) / 100
+            elif del_mes:
+                org["_usados"] = sum(d.get("operations", 0) for d in del_mes)
+        except ErrorHTTP as e:
+            org["_error_uso"] = str(e)
+        return org
 
     # acciones (solo se llaman tras tu aprobación en Telegram)
     def ejecutar(self, escenario_id):

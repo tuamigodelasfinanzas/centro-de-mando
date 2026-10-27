@@ -41,6 +41,8 @@ def recoger():
                 time.sleep(0.3)
         try:
             datos["org"] = make.organizacion()
+            if datos["org"].get("_error_uso"):
+                datos["errores"].append(f"Make, consumo de créditos: {datos['org']['_error_uso']}")
         except ErrorHTTP as e:
             datos["errores"].append(f"Make, consumo de créditos: {e}")
     except ErrorHTTP as e:
@@ -67,6 +69,8 @@ def creditos(org):
             break
     if isinstance(org.get("centicredits"), (int, float)):
         usados = org["centicredits"] / 100
+    if isinstance(org.get("_usados"), (int, float)):
+        usados = org["_usados"]
     if usados is None or not limite:
         return None
     return {"usados": round(usados), "limite": int(limite), "pct": round(100 * usados / limite)}
