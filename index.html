@@ -56,9 +56,10 @@ h1{font-size:19px;font-weight:800;font-stretch:82%;letter-spacing:-.005em;white-
 .refresh svg{width:15px;height:15px}
 .refresh.girando svg{animation:gira .8s linear infinite}
 @keyframes gira{to{transform:rotate(360deg)}}
-.seg-wrap{padding-block:0 10px}
+.top .seg-wrap{display:block;padding-block:0 10px}
+.seg{width:100%}
 .seg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding:4px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
-.seg button{border:0;background:transparent;border-radius:9px;padding:9px 4px;font-size:14px;font-weight:650;color:var(--mute);cursor:pointer;
+.seg button{border:0;background:transparent;border-radius:9px;padding:11px 4px;min-height:44px;font-size:14px;font-weight:650;color:var(--mute);cursor:pointer;
   display:flex;align-items:center;justify-content:center;gap:6px;min-width:0;touch-action:manipulation;-webkit-tap-highlight-color:transparent;position:relative}
 .seg button svg{width:17px;height:17px;flex:none}
 .seg button[aria-current="page"]{background:var(--ink);color:var(--bg)}
