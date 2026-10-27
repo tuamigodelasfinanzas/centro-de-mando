@@ -8,7 +8,7 @@ import time
 from collections import defaultdict
 from datetime import timedelta
 
-from base import (CONFIG, ErrorHTTP, GitHub, Make, Telegram, ahora, anotar, cargar, esc, gemini, guardar,
+from base import (CONFIG, ErrorHTTP, GitHub, Make, Telegram, ahora, http, anotar, cargar, esc, gemini, guardar,
                   hora_madrid, iso, leer_fecha, limpiar, proyecto_por_carpeta, proyecto_por_nombre_escenario,
                   proyectos, url_make_escenario)
 
@@ -205,6 +205,9 @@ def construir_estado(datos, por_proyecto, cred, propuestas):
         gh_agenda, err = agenda_github(p)
         if err:
             datos["errores"].append(err)
+        ig, err = instagram(p)
+        if err:
+            datos["errores"].append(err)
         prox = sorted(prox + [{"nombre": g["nombre"], "proxima": g["cuando"]} for g in gh_agenda if g["activo"]],
                       key=lambda e: e["proxima"])
         salida.append({
@@ -216,7 +219,7 @@ def construir_estado(datos, por_proyecto, cred, propuestas):
             "github": {"workflows": len(runs), "ejecuciones_36h": sum(r["ejecuciones"] for r in runs),
                        "fallidas_36h": sum(r["fallidas"] for r in runs)},
             "proximas": [{"nombre": e["nombre"], "cuando": e["proxima"]} for e in prox[:5]],
-            "incidencias": incid, "escenarios": esc_, "workflows": runs, "programadas_github": gh_agenda,
+            "incidencias": incid, "escenarios": esc_, "workflows": runs, "programadas_github": gh_agenda, "ig": ig,
         })
     return {"actualizado": iso(ahora_), "creditos": cred, "proyectos": salida,
             "propuestas_abiertas": len(abiertas), "errores_recogida": datos["errores"]}
@@ -398,3 +401,49 @@ def agenda_github(p, dias=3):
         salida.append({"nombre": nombre, "cuando": iso(cuando), "origen": "github", "activo": activo,
                        "enlace": f"https://github.com/{p['repo']}/actions/workflows/{cfg['workflow']}"})
     return salida, None
+
+
+SETS_IG = ["reach,saved,shares,total_interactions,views", "reach,saved,shares,total_interactions", "reach,saved,shares", "reach"]
+NOMBRES_IG = {"reach": "alcance", "saved": "guardados", "shares": "compartidos", "views": "vistas", "total_interactions": "interacciones"}
+
+
+def instagram(p, cuantas=8):
+    """Últimas publicaciones de la cuenta con sus vistas. Token en el secret IG_TOKEN_<PROYECTO> (p. ej. IG_TOKEN_FINANZAS)."""
+    import os
+    import urllib.parse
+    token = os.environ.get(f"IG_TOKEN_{p['id'].upper()}", "").strip().strip("\"'")
+    if not token:
+        return None, None
+    api = "https://graph.instagram.com/v21.0" if token.startswith("IG") else "https://graph.facebook.com/v21.0"
+
+    def get(ruta, **q):
+        q["access_token"] = token
+        return http("GET", f"{api}/{ruta}?{urllib.parse.urlencode(q)}", intentos=2)
+
+    try:
+        usuario = os.environ.get(f"IG_USER_{p['id'].upper()}", "").strip() or p.get("ig_user") or ""
+        if not usuario:
+            usuario = get("me", fields="user_id,id").get("user_id") or get("me", fields="id")["id"]
+        cuenta = get(usuario, fields="username,followers_count,media_count")
+        media = get(f"{usuario}/media", fields="id,caption,media_type,media_product_type,timestamp,like_count,comments_count,permalink,thumbnail_url,media_url",
+                    limit=cuantas).get("data", [])
+    except ErrorHTTP as e:
+        return None, f"Instagram de {p['nombre']}: {limpiar(e)[:160]}"
+    pubs = []
+    for m in media:
+        fila = {"tipo": {"VIDEO": "Reel", "CAROUSEL_ALBUM": "Carrusel", "IMAGE": "Imagen"}.get(m.get("media_type"), m.get("media_type")),
+                "fecha": m.get("timestamp"), "texto": (m.get("caption") or "").split("\n")[0][:120], "enlace": m.get("permalink"),
+                "miniatura": m.get("thumbnail_url") or (m.get("media_url") if m.get("media_type") != "VIDEO" else None),
+                "me_gusta": m.get("like_count", 0), "comentarios": m.get("comments_count", 0)}
+        if m.get("media_product_type") == "STORY":
+            fila["tipo"] = "Historia"
+        for s in SETS_IG:
+            try:
+                for x in get(f"{m['id']}/insights", metric=s).get("data", []):
+                    fila[NOMBRES_IG.get(x["name"], x["name"])] = (x.get("values") or [{}])[0].get("value", 0)
+                break
+            except ErrorHTTP:
+                continue
+        pubs.append(fila)
+    return {"usuario": cuenta.get("username"), "seguidores": cuenta.get("followers_count"),
+            "total": cuenta.get("media_count"), "publicaciones": pubs, "leido": iso(ahora())}, None

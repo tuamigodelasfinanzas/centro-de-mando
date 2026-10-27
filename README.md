@@ -55,10 +55,13 @@ GitHub → Settings → Developer settings → Fine-grained tokens → Generate 
 **4. (Opcional) Explicaciones claras** → secret **`GEMINI_API_KEY`**
 La misma clave de Google AI Studio que ya usas en resumen-bolsa-reel.
 
-**5. Panel web**
+**5. (Opcional) Publicaciones y vistas en el panel** → secrets **`IG_TOKEN_FINANZAS`**, **`IG_TOKEN_PIN`**, **`IG_TOKEN_MAYORES`**
+El mismo token de Instagram que tiene cada repo de proyecto (secret `IG_ACCESS_TOKEN`). Con él, al tocar el nombre de un proyecto en el panel se despliegan sus últimas publicaciones con vistas, alcance, me gusta y guardados. Si el token empieza por `EAA` (de Facebook), añade también `IG_USER_PIN` / `IG_USER_MAYORES` con el número de la cuenta de Instagram.
+
+**6. Panel web**
 Settings → Pages → *Deploy from a branch* → `main` / `(root)` → Save.
 
-**6. Arrancar**
+**7. Arrancar**
 Actions → Centro de mando → Run workflow → modo `resumen`. En un minuto te llega el primer resumen.
 
 ## Cómo está hecho

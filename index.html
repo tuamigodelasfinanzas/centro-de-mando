@@ -64,6 +64,20 @@ h1{font-size:19px;font-weight:800;font-stretch:82%;letter-spacing:-.005em;white-
 .seg button svg{width:17px;height:17px;flex:none}
 .seg button[aria-current="page"]{background:var(--ink);color:var(--bg)}
 .seg .badge{min-width:17px;height:17px;border-radius:9px;background:var(--bad);color:#fff;font:600 10px/17px var(--f-data);text-align:center;padding:0 4px}
+.pname{all:unset;cursor:pointer;display:grid;gap:2px;min-width:0;-webkit-tap-highlight-color:transparent}
+.pname h3::after{content:"";width:8px;height:8px;border-right:2px solid var(--mute);border-bottom:2px solid var(--mute);transform:rotate(45deg) translateY(-3px);margin-left:4px;transition:transform .15s}
+.pname[aria-expanded="true"] h3::after{transform:rotate(-135deg) translateY(-1px)}
+.pname:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:6px}
+.ig{display:grid;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.ig-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 12px;background:var(--panel-2);font-size:12.5px;color:var(--mute)}
+.ig-h b{font:600 15px var(--f-data);color:var(--ink)}
+.post{display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;padding:10px 12px;border-top:1px solid var(--line);color:inherit}
+.thumb{width:52px;height:66px;border-radius:7px;background:var(--line);object-fit:cover;display:block}
+.post .tx{font-size:13.5px;line-height:1.3;font-weight:600;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.post .md{display:flex;gap:6px;align-items:center;font-size:11.5px;color:var(--mute);margin-bottom:3px}
+.met{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:6px;font-size:12px;color:var(--mute)}
+.met b{font:600 13px var(--f-data);color:var(--ink);font-variant-numeric:tabular-nums}
+.met .big b{color:var(--accent)}
 /* barra flotante inferior (móvil) */
 .nav{position:fixed;z-index:30;left:max(12px,env(safe-area-inset-left,0px));right:max(12px,env(safe-area-inset-right,0px));
   bottom:calc(10px + env(safe-area-inset-bottom,0px));background:var(--panel);border:1px solid var(--line);border-radius:18px;
@@ -267,7 +281,8 @@ const RAW = "https://raw.githubusercontent.com/tuamigodelasfinanzas/centro-de-ma
 const TZ = "Europe/Madrid";
 const ETQ = {verde:"OK", ambar:"Revisar", rojo:"Falla"};
 const VISTAS = ["resumen","agenda","proyectos","sistema"];
-let S = null, enVivo = false, filtroProy = "todos", soloPub = true;
+let S = null, enVivo = false, filtroProy = "todos", soloPub = true, abiertos = new Set();
+try { abiertos = new Set(JSON.parse(localStorage.getItem("cm-abiertos") || "[]")); } catch(_) {}
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -366,7 +381,7 @@ function pintar(){
     <div class="day"><h3>${capital(relDia(g[0].cuando))} · ${g.length}</h3><div class="box">${g.map(x => evento(x, false)).join("")}</div></div>`).join("")
     : `<div class="box empty">Nada programado con este filtro.</div>`;
 
-  $("fichas").innerHTML = s.proyectos.map(ficha).join("");
+  $("fichas").innerHTML = s.proyectos.map(p => ficha({...p, instagram_datos: p.ig || null})).join("");
 
   const wfs = s.proyectos.flatMap(p => p.workflows.map(w => ({...w, p})))
     .sort((a,b) => (a.ultimo !== "failure") - (b.ultimo !== "failure") || (b.cuando||"").localeCompare(a.cuando||""));
@@ -395,6 +410,25 @@ function evento(x, conDia){
         <span class="chip">${x.tipo.l}</span>${dia}${pronto ? "<span style='color:var(--accent);font-weight:600'>en menos de 1 h</span>" : ""}</div></div></div>`;
 }
 
+
+const nf = n => n == null ? "—" : n >= 10000 ? (n/1000).toLocaleString("es-ES",{maximumFractionDigits:1}) + " mil" : n.toLocaleString("es-ES");
+function publicaciones(p){
+  const ig = p.instagram_datos;
+  if (!ig) return `<div class="ig"><div class="ig-h" style="display:block;line-height:1.45">Para ver aquí las publicaciones y sus vistas, guarda el token de Instagram de esta cuenta en GitHub como <b style="font-size:13px">IG_TOKEN_${p.id.toUpperCase()}</b>.</div></div>`;
+  const posts = ig.publicaciones || [];
+  return `<div class="ig">
+    <div class="ig-h"><span><b>${nf(ig.seguidores)}</b> seguidores · ${nf(ig.total)} publicaciones</span><span>leído ${hace(ig.leido)}</span></div>
+    ${posts.length ? posts.map(x => `<a class="post" href="${x.enlace}" target="_blank" rel="noopener">
+      ${x.miniatura ? `<img class="thumb" src="${x.miniatura}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.visibility='hidden'">` : `<span class="thumb"></span>`}
+      <div style="min-width:0"><div class="md"><span class="chip">${esc(x.tipo)}</span>${hace(x.fecha)}</div>
+        <div class="tx">${esc(x.texto || "Sin texto")}</div>
+        <div class="met"><span class="big"><b>${nf(x.vistas ?? x.alcance)}</b> ${x.vistas != null ? "vistas" : "alcance"}</span>
+          ${x.vistas != null && x.alcance != null ? `<span><b>${nf(x.alcance)}</b> alcance</span>` : ""}
+          <span><b>${nf(x.me_gusta)}</b> me gusta</span><span><b>${nf(x.comentarios)}</b> coment.</span>
+          ${x.guardados != null ? `<span><b>${nf(x.guardados)}</b> guard.</span>` : ""}${x.compartidos != null ? `<span><b>${nf(x.compartidos)}</b> compart.</span>` : ""}</div></div>
+    </a>`).join("") : `<div class="empty">Aún no hay publicaciones.</div>`}
+  </div>`;
+}
 function ficha(p){
   const m = p.make, g = p.github;
   const rec = m.recuperados_36h || 0, ko = Math.max(0, m.fallos_36h - rec), okM = Math.max(0, m.ejecuciones_36h - m.fallos_36h);
@@ -403,9 +437,10 @@ function ficha(p){
       <a class="n ${e.activo ? "" : "off"}" href="${e.enlace}" target="_blank" rel="noopener">${esc(e.nombre)}${e.activo ? "" : " · apagado"}</a>
       <span class="w">${e.activo && e.proxima ? relDia(e.proxima).slice(0,3) + " " + hm(e.proxima) : "—"}</span></div>`).join("");
   return `<article class="box proj">
-    <div class="hd"><div><h3><span class="tag" style="background:${color(p.id)};width:10px;height:10px"></span>${esc(p.nombre)}</h3>
-      <div class="handle">${p.instagram ? "@" + esc(p.instagram) + " · " : ""}<a href="https://github.com/${p.repo}" target="_blank" rel="noopener">repo en GitHub</a></div></div>
+    <div class="hd"><button type="button" class="pname" data-ig="${p.id}" aria-expanded="${abiertos.has(p.id)}"><h3><span class="tag" style="background:${color(p.id)};width:10px;height:10px"></span>${esc(p.nombre)}</h3>
+      <span class="handle">${p.instagram ? "@" + esc(p.instagram) + " · " : ""}${abiertos.has(p.id) ? "ocultar publicaciones" : "ver últimas publicaciones"}</span></button>
       <span class="pill ${p.semaforo}">${ETQ[p.semaforo]}</span></div>
+    ${abiertos.has(p.id) ? publicaciones(p) : ""}
     <div class="stats">
       <div><b>${m.activos}/${m.total}</b><span>escenarios activos</span></div>
       <div><b>${m.ejecuciones_36h}</b><span>ejecuciones Make 36 h</span></div>
@@ -436,6 +471,12 @@ function vista(){
   if (!VISTAS.includes(v)) { try { v = localStorage.getItem("cm-vista") || "resumen"; } catch(_) { v = "resumen"; } }
   mostrar(v);
 }
+document.addEventListener("click", e => {
+  const n = e.target.closest("button[data-ig]"); if (!n) return;
+  const id = n.dataset.ig; abiertos.has(id) ? abiertos.delete(id) : abiertos.add(id);
+  try { localStorage.setItem("cm-abiertos", JSON.stringify([...abiertos])); } catch(_) {}
+  pintar();
+});
 document.addEventListener("click", e => { const b = e.target.closest("button[data-v]"); if (b) { mostrar(b.dataset.v); scrollTo(0, 0); } });
 // los enlaces internos («Agenda completa», «Ver fichas», filas de proyectos) también cambian de vista
 document.addEventListener("click", e => {
