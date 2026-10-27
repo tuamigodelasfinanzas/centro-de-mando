@@ -207,6 +207,12 @@ class GitHub:
         except ErrorHTTP:
             return ""
 
+    def archivo(self, repo, ruta, ref=None):
+        """Texto de un archivo de un repo (por la API, sin la caché de raw.githubusercontent)."""
+        q = f"?ref={ref}" if ref else ""
+        cab = {**self._cab(), "Accept": "application/vnd.github.raw+json"}
+        return http("GET", f"https://api.github.com/repos/{repo}/contents/{ruta}{q}", cab, crudo=True).decode()
+
     def relanzar_fallidos(self, repo, run_id):
         if not self.puede_actuar:
             raise ErrorHTTP("falta el secret GH_PAT para relanzar workflows de otros repos")

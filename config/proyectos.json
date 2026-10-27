@@ -13,8 +13,24 @@
       "instagram": "tuamigodelasfinanzas",
       "carpeta_make": 408152,
       "repo": "tuamigodelasfinanzas/resumen-bolsa-reel",
-      "prefijos": ["RESUMEN BOLSA", "CARRUSEL", "HISTORIA", "REEL", "AVISO TikTok", "EN 30 SEGUNDOS", "INFORME", "PLANNING", "IMPORTAR_STOCKS"],
-      "alias": ["finanzas", "tuamigo", "amigo", "bolsa", "tadf"]
+      "prefijos": [
+        "RESUMEN BOLSA",
+        "CARRUSEL",
+        "HISTORIA",
+        "REEL",
+        "AVISO TikTok",
+        "EN 30 SEGUNDOS",
+        "INFORME",
+        "PLANNING",
+        "IMPORTAR_STOCKS"
+      ],
+      "alias": [
+        "finanzas",
+        "tuamigo",
+        "amigo",
+        "bolsa",
+        "tadf"
+      ]
     },
     {
       "id": "pin",
@@ -23,8 +39,14 @@
       "instagram": "theplanetinnumbers",
       "carpeta_make": 407346,
       "repo": "tuamigodelasfinanzas/planet-in-numbers",
-      "prefijos": ["PIN ·"],
-      "alias": ["pin", "planet", "planeta"]
+      "prefijos": [
+        "PIN ·"
+      ],
+      "alias": [
+        "pin",
+        "planet",
+        "planeta"
+      ]
     },
     {
       "id": "mayores",
@@ -33,8 +55,24 @@
       "instagram": "cosasdemayores.tv",
       "carpeta_make": 408847,
       "repo": "tuamigodelasfinanzas/No-Entiendo-a-los-Mayores",
-      "prefijos": ["No Entiendo a los Mayores", "Cosas de Mayores", "MAYORES ·"],
-      "alias": ["mayores", "cosas", "cdm", "no entiendo"]
+      "prefijos": [
+        "No Entiendo a los Mayores",
+        "Cosas de Mayores",
+        "MAYORES ·"
+      ],
+      "alias": [
+        "mayores",
+        "cosas",
+        "cdm",
+        "no entiendo"
+      ],
+      "calendario_github": {
+        "archivo": "content/calendario.json",
+        "publicados": "gh-pages:state/published.json",
+        "guion": "content/guiones/es/{id}.json",
+        "workflow": "publish.yml",
+        "tipo": "Reel"
+      }
     },
     {
       "id": "zero",
@@ -43,8 +81,13 @@
       "instagram": "",
       "carpeta_make": 408147,
       "repo": "tuamigodelasfinanzas/zero-understands",
-      "prefijos": ["ZERO ·"],
-      "alias": ["zero", "zu"]
+      "prefijos": [
+        "ZERO ·"
+      ],
+      "alias": [
+        "zero",
+        "zu"
+      ]
     }
   ]
 }

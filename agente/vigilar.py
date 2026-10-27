@@ -202,6 +202,11 @@ def construir_estado(datos, por_proyecto, cred, propuestas):
         prox.sort(key=lambda e: e["proxima"])
         runs = d["runs"]
         incid = [{**i, "propuesta": abiertas.get(i["clave"], {}).get("id")} for i in d["incid"]]
+        gh_agenda, err = agenda_github(p)
+        if err:
+            datos["errores"].append(err)
+        prox = sorted(prox + [{"nombre": g["nombre"], "proxima": g["cuando"]} for g in gh_agenda if g["activo"]],
+                      key=lambda e: e["proxima"])
         salida.append({
             "id": p["id"], "nombre": p["nombre"], "emoji": p["emoji"], "instagram": p["instagram"], "repo": p["repo"],
             "carpeta_make": p["carpeta_make"], "semaforo": semaforo(d["incid"]),
@@ -211,7 +216,7 @@ def construir_estado(datos, por_proyecto, cred, propuestas):
             "github": {"workflows": len(runs), "ejecuciones_36h": sum(r["ejecuciones"] for r in runs),
                        "fallidas_36h": sum(r["fallidas"] for r in runs)},
             "proximas": [{"nombre": e["nombre"], "cuando": e["proxima"]} for e in prox[:5]],
-            "incidencias": incid, "escenarios": esc_, "workflows": runs,
+            "incidencias": incid, "escenarios": esc_, "workflows": runs, "programadas_github": gh_agenda,
         })
     return {"actualizado": iso(ahora_), "creditos": cred, "proyectos": salida,
             "propuestas_abiertas": len(abiertas), "errores_recogida": datos["errores"]}
@@ -347,3 +352,49 @@ def vigilar(forzar_resumen=False):
         guardar("control.json", control)
     print(f"Vigilancia: {len(incidencias)} incidencias, {nuevas} nuevas, errores de lectura: {len(datos['errores'])}")
     return estado
+
+
+def agenda_github(p, dias=3):
+    """Publicaciones que programa GitHub (no Make): franjas de content/calendario.json y el guion que toca en cada una."""
+    cfg = p.get("calendario_github")
+    if not cfg:
+        return [], None
+    from datetime import datetime as _dt
+    from base import MADRID
+    import json as _json
+    gh = GitHub()
+    try:
+        cal = _json.loads(gh.archivo(p["repo"], cfg["archivo"]))
+        rama, ruta = cfg["publicados"].split(":", 1)
+        try:
+            publicados = _json.loads(gh.archivo(p["repo"], ruta, rama))
+        except ErrorHTTP:
+            publicados = {}
+    except (ErrorHTTP, ValueError) as e:
+        return [], f"GitHub {p['repo']}, calendario: {e}"
+    activo = str(cal.get("publicar", "")).lower() == "si" and bool(cal.get("inicio"))
+    pendientes = [g for g in cal.get("orden", []) if g not in publicados]
+    hoy = ahora().astimezone(MADRID).date()
+    inicio = _dt.strptime(cal["inicio"], "%Y-%m-%d").date() if cal.get("inicio") else hoy
+    huecos = []
+    for d in range(dias):
+        dia = hoy + timedelta(days=d)
+        if dia < inicio:
+            continue
+        for franja, hora in sorted(cal.get("franjas", {}).items(), key=lambda x: x[1]):
+            h, m = map(int, hora.split(":"))
+            cuando = _dt(dia.year, dia.month, dia.day, h, m, tzinfo=MADRID)
+            if cuando > ahora():
+                huecos.append((franja, cuando))
+    salida = []
+    for (franja, cuando), gid in zip(huecos, pendientes + [None] * len(huecos)):
+        titulo = ""
+        if gid and len(salida) < 8:
+            try:
+                titulo = _json.loads(gh.archivo(p["repo"], cfg["guion"].format(id=gid))).get("titulo", "")
+            except (ErrorHTTP, ValueError):
+                pass
+        nombre = f"{cfg.get('tipo', 'Publicación')} {franja} · " + (titulo or gid or "sin guion pendiente")
+        salida.append({"nombre": nombre, "cuando": iso(cuando), "origen": "github", "activo": activo,
+                       "enlace": f"https://github.com/{p['repo']}/actions/workflows/{cfg['workflow']}"})
+    return salida, None
