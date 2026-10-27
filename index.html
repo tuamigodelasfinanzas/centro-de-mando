@@ -183,8 +183,25 @@ function pintar(s, enVivo){
 let foto = null;
 try { foto = JSON.parse(document.getElementById("foto").textContent); } catch(e) {}
 if (foto) pintar(foto, false);
-fetch(RAW + "?t=" + Date.now()).then(r => r.ok ? r.json() : Promise.reject()).then(s => pintar(s, true)).catch(() => {
-  if (!foto) document.getElementById("fresh").textContent = "Aún no hay datos: la primera vigilancia no ha terminado.";
-});
-setInterval(() => fetch(RAW + "?t=" + Date.now()).then(r => r.json()).then(s => pintar(s, true)).catch(() => {}), 5 * 60 * 1000);
+
+// 1º la API de GitHub (sin caché larga); si falla, la copia raw
+const API = "https://api.github.com/repos/tuamigodelasfinanzas/centro-de-mando/contents/status.json?ref=estado";
+async function cargar(){
+  try {
+    const r = await fetch(API + "&t=" + Date.now(), {headers:{Accept:"application/vnd.github.raw+json"}, cache:"no-store"});
+    if (!r.ok) throw new Error(r.status);
+    return await r.json();
+  } catch(e) {
+    const r = await fetch(RAW + "?t=" + Date.now(), {cache:"no-store"});
+    if (!r.ok) throw new Error(r.status);
+    return await r.json();
+  }
+}
+function refrescar(){
+  cargar().then(s => pintar(s, true)).catch(() => {
+    if (!foto) document.getElementById("fresh").textContent = "No pude leer los datos del agente. Recarga la página en un minuto.";
+  });
+}
+refrescar();
+setInterval(refrescar, 5 * 60 * 1000);
 </script>
