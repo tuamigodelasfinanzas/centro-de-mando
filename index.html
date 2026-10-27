@@ -32,7 +32,7 @@
 [hidden]{display:none!important}
 html,body{margin:0}
 body{background:var(--bg);color:var(--ink);font:15px/1.45 var(--f-body);-webkit-font-smoothing:antialiased;
-  padding-bottom:calc(env(safe-area-inset-bottom,0px) + 16px)}
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 24px)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:20;background:var(--bg)}
 .gut{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .wrap{max-width:1180px;margin:0 auto}
@@ -56,7 +56,7 @@ h1{font-size:19px;font-weight:800;font-stretch:82%;letter-spacing:-.005em;white-
 .refresh svg{width:15px;height:15px}
 .refresh.girando svg{animation:gira .8s linear infinite}
 @keyframes gira{to{transform:rotate(360deg)}}
-.top .seg-wrap{display:block;padding-block:0 10px}
+.top .seg-wrap{display:none;padding-block:0 10px}
 .seg{width:100%}
 .seg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding:4px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
 .seg button{border:0;background:transparent;border-radius:9px;padding:11px 4px;min-height:44px;font-size:14px;font-weight:650;color:var(--mute);cursor:pointer;
@@ -64,7 +64,17 @@ h1{font-size:19px;font-weight:800;font-stretch:82%;letter-spacing:-.005em;white-
 .seg button svg{width:17px;height:17px;flex:none}
 .seg button[aria-current="page"]{background:var(--ink);color:var(--bg)}
 .seg .badge{min-width:17px;height:17px;border-radius:9px;background:var(--bad);color:#fff;font:600 10px/17px var(--f-data);text-align:center;padding:0 4px}
-@media (max-width:420px){ .seg button svg{display:none} .seg button{font-size:13px} }
+/* barra flotante inferior (móvil) */
+.nav{position:fixed;z-index:30;left:max(12px,env(safe-area-inset-left,0px));right:max(12px,env(safe-area-inset-right,0px));
+  bottom:calc(10px + env(safe-area-inset-bottom,0px));background:var(--panel);border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 28px rgba(10,30,26,.18);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));height:var(--nav-h);padding:6px}
+.nav button{border:0;background:transparent;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  color:var(--faint);font-size:11px;font-weight:650;cursor:pointer;position:relative;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.nav button svg{width:22px;height:22px;pointer-events:none}
+.nav button[aria-current="page"]{color:var(--accent);background:var(--accent-soft)}
+.nav .badge{position:absolute;top:4px;left:calc(50% + 6px);min-width:16px;height:16px;border-radius:8px;background:var(--bad);color:#fff;
+  font:600 10px/16px var(--f-data);text-align:center;padding:0 4px}
+@media (min-width:900px){ .nav{display:none} .top .seg-wrap{display:block} body{padding-bottom:24px} }
 
 
 main{padding-block:16px 24px}
@@ -182,7 +192,7 @@ details.more[open] summary::after{content:"Ocultar"}
     </button>
   </div>
   <div class="wrap gut seg-wrap">
-    <nav class="seg" id="seg" aria-label="Qué ver"><button type="button" data-v="resumen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Resumen<span class="badge" id="badge" hidden></span></button><button type="button" data-v="agenda"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Agenda</button><button type="button" data-v="proyectos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v13H4z"/><path d="M9 7V4h6v3"/></svg>Proyectos</button><button type="button" data-v="sistema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Sistema</button></nav>
+    <nav class="seg" id="seg" aria-label="Qué ver"><button type="button" data-v="resumen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Resumen<span class="badge" data-badge hidden></span></button><button type="button" data-v="agenda"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Agenda</button><button type="button" data-v="proyectos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v13H4z"/><path d="M9 7V4h6v3"/></svg>Proyectos</button><button type="button" data-v="sistema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Sistema</button></nav>
   </div>
 </header>
 
@@ -247,6 +257,8 @@ details.more[open] summary::after{content:"Ocultar"}
   </section>
 </main>
 
+
+<nav class="nav" aria-label="Secciones"><button type="button" data-v="resumen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Resumen<span class="badge" data-badge hidden></span></button><button type="button" data-v="agenda"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Agenda</button><button type="button" data-v="proyectos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v13H4z"/><path d="M9 7V4h6v3"/></svg>Proyectos</button><button type="button" data-v="sistema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Sistema</button></nav>
 
 <script id="foto" type="application/json">null</script>
 <script>
@@ -322,8 +334,7 @@ function pintar(){
       : `<div class="box kpi"><div class="l">Créditos Make</div><div class="v">—</div><div class="s">Sin dato</div></div>`
   ].join("");
 
-  const badge = $("badge");
-  badge.hidden = !incid.length; badge.textContent = incid.length;
+  document.querySelectorAll("[data-badge]").forEach(b => { b.hidden = !incid.length; b.textContent = incid.length; });
 
   $("atencion").innerHTML = incid.length ? incid.map(i => `
     <div class="alert ${i.nivel}"><span class="bar"></span><div>
@@ -414,7 +425,7 @@ function ficha(p){
 function mostrar(v){
   if (!VISTAS.includes(v)) v = "resumen";
   for (const n of VISTAS) $("v-" + n).hidden = n !== v;
-  document.querySelectorAll("#seg button").forEach(b => {
+  document.querySelectorAll("button[data-v]").forEach(b => {
     if (b.dataset.v === v) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
   });
   try { history.replaceState(null, "", "#" + v); } catch(_) {}
@@ -425,7 +436,7 @@ function vista(){
   if (!VISTAS.includes(v)) { try { v = localStorage.getItem("cm-vista") || "resumen"; } catch(_) { v = "resumen"; } }
   mostrar(v);
 }
-$("seg").addEventListener("click", e => { const b = e.target.closest("button[data-v]"); if (b) { mostrar(b.dataset.v); scrollTo(0, 0); } });
+document.addEventListener("click", e => { const b = e.target.closest("button[data-v]"); if (b) { mostrar(b.dataset.v); scrollTo(0, 0); } });
 // los enlaces internos («Agenda completa», «Ver fichas», filas de proyectos) también cambian de vista
 document.addEventListener("click", e => {
   const a = e.target.closest('a[href^="#"]'); if (!a) return;
