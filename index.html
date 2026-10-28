@@ -346,10 +346,8 @@ function publicadas(s){
 }
 function evPublicada(x){
   const ok = x.estado === "ok";
-  const av = x.p.ig && x.p.ig.avatar;
   return `<div class="ev pub" style="background:var(--p-${x.p.id})">
-    <div class="hc"><span class="h">${hm(x.cuando)}</span>
-      <span class="av" title="${esc(x.p.nombre)}">${esc(x.p.emoji)}${av ? `<img src="${esc(av)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}</span></div>
+    <div class="hc"><span class="h">${hm(x.cuando)}</span>${avatar(x.p)}</div>
     <div><div class="pr">
       <button type="button" class="luz ${ok ? "ok" : "ko"}" aria-expanded="false" aria-label="${ok ? "Publicado bien" : "Error al publicar, pulsa para ver el motivo"}" title="${ok ? "Publicado correctamente" : esc(x.error || "Error al publicar")}"></button>
       <a class="t" href="${x.enlace}" target="_blank" rel="noopener">${esc(limpiaNombre(x.nombre))}</a></div>
@@ -439,12 +437,16 @@ function pintar(){
   $("errores").innerHTML = s.errores_recogida.map(e => `<div class="row"><span class="tag" style="background:var(--warn)"></span><div class="m" style="margin:0">${esc(e)}</div><span></span></div>`).join("");
 }
 
+function avatar(p){
+  const av = p.ig && p.ig.avatar;
+  return `<span class="av" title="${esc(p.nombre)}">${esc(p.emoji)}${av ? `<img src="${esc(av)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}</span>`;
+}
 function evento(x, conDia){
   const pasado = new Date(x.cuando) < Date.now();
   const pronto = !pasado && new Date(x.cuando) - Date.now() < 3600e3;
   const dia = conDia && diaClave(x.cuando) !== diaClave(Date.now()) ? `<span>${relDia(x.cuando)}</span>` : "";
-  return `<div class="ev ${pasado ? "pasado" : pronto ? "ahora" : ""}">
-    <span class="h">${hm(x.cuando)}</span>
+  return `<div class="ev pub ${pasado ? "pasado" : pronto ? "ahora" : ""}" style="background:var(--p-${x.p.id})">
+    <div class="hc"><span class="h">${hm(x.cuando)}</span>${avatar(x.p)}</div>
     <div><a class="t" href="${x.enlace}" target="_blank" rel="noopener">${esc(limpiaNombre(x.nombre))}</a>
       <div class="m"><span class="tag" style="background:${color(x.p.id)}"></span>${esc(x.p.nombre)}
         <span class="chip">${x.tipo.l}</span>${dia}${pronto ? "<span style='color:var(--accent);font-weight:600'>en menos de 1 h</span>" : ""}</div></div></div>`;
