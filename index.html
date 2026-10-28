@@ -144,6 +144,12 @@ h2{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;
 .ev .m{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:5px;font-size:12px;color:var(--mute)}
 .ev.pasado{opacity:.5}
 .ev.ahora .h{color:var(--accent)}
+.mo{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:600;white-space:nowrap;cursor:pointer;color:inherit}
+.mo[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.pr{display:flex;gap:8px;align-items:center;min-width:0}
+.luz{width:12px;height:12px;border-radius:50%;border:0;padding:0;flex:none;cursor:pointer;background:var(--ok);box-shadow:0 0 0 3px var(--ok-bg)}
+.luz.ko{background:var(--bad);box-shadow:0 0 0 3px var(--bad-bg)}
+.errmsg{margin-top:7px;font-size:13px;line-height:1.4;color:var(--bad);background:var(--bad-bg);padding:8px 10px;border-radius:8px;overflow-wrap:anywhere}
 
 .pgrid{display:grid;gap:12px;align-items:start}
 .proj{padding:16px;display:grid;gap:14px}
@@ -230,6 +236,10 @@ details.more[open] summary::after{content:"Ocultar"}
   </section>
 
   <section class="view" id="v-agenda" hidden>
+    <div class="filters" id="modoAg" role="toolbar" aria-label="Ver agenda">
+      <button type="button" class="mo" data-m="prox" aria-pressed="true">Próximas</button>
+      <button type="button" class="mo" data-m="pub" aria-pressed="false">Publicadas · últimas 24 h</button>
+    </div>
     <div class="filters" id="filtros" role="toolbar" aria-label="Filtrar agenda"></div>
     <div id="dias" class="view"></div>
   </section>
@@ -281,7 +291,8 @@ const RAW = "https://raw.githubusercontent.com/tuamigodelasfinanzas/centro-de-ma
 const TZ = "Europe/Madrid";
 const ETQ = {verde:"OK", ambar:"Revisar", rojo:"Falla"};
 const VISTAS = ["resumen","agenda","proyectos","sistema"];
-let S = null, enVivo = false, filtroProy = "todos", soloPub = true, abiertos = new Set();
+let S = null, enVivo = false, filtroProy = "todos", soloPub = true, abiertos = new Set(), modoAg = "prox";
+try { modoAg = localStorage.getItem("cm-modo") === "pub" ? "pub" : "prox"; } catch(_) {}
 try { abiertos = new Set(JSON.parse(localStorage.getItem("cm-abiertos") || "[]")); } catch(_) {}
 
 const $ = id => document.getElementById(id);
@@ -319,6 +330,23 @@ function agenda(s){
       out.push({p, nombre:g.nombre, cuando:g.cuando, origen:"GitHub", enlace:g.enlace, tipo:{k:"pub", l:"Reel"}});
   }
   return out.sort((a,b) => a.cuando.localeCompare(b.cuando));
+}
+function publicadas(s){
+  const desde = Date.now() - 24 * 36e5, out = [];
+  for (const p of s.proyectos) for (const x of (p.publicados || []))
+    if (x.cuando && new Date(x.cuando) >= desde) out.push({...x, p});
+  return out.sort((a,b) => new Date(b.cuando) - new Date(a.cuando));
+}
+function evPublicada(x){
+  const ok = x.estado === "ok";
+  return `<div class="ev">
+    <span class="h">${hm(x.cuando)}</span>
+    <div><div class="pr">
+      <button type="button" class="luz ${ok ? "ok" : "ko"}" aria-expanded="false" aria-label="${ok ? "Publicado bien" : "Error al publicar, pulsa para ver el motivo"}" title="${ok ? "Publicado correctamente" : esc(x.error || "Error al publicar")}"></button>
+      <a class="t" href="${x.enlace}" target="_blank" rel="noopener">${esc(limpiaNombre(x.nombre))}</a></div>
+      <div class="m"><span class="tag" style="background:${color(x.p.id)}"></span>${esc(x.p.nombre)}<span class="chip">${esc(x.origen)}</span><span>${hace(x.cuando)}</span></div>
+      ${ok ? "" : `<div class="errmsg" hidden>${esc(x.error || "Sin detalle del error. Ábrelo para verlo.")}</div>`}
+    </div></div>`;
 }
 const limpiaNombre = n => { const t = n.replace(/\s*\([^)]*\)\s*$/,"").replace(/^(CARRUSEL|HISTORIA|REEL)\s+/i,"").replace(/^PIN · /,"").replace(/^ZERO · /,""); return t.charAt(0).toUpperCase() + t.slice(1); };
 const capital = t => t.charAt(0).toUpperCase() + t.slice(1);
@@ -373,13 +401,16 @@ function pintar(){
   const proys = [{id:"todos"}, ...s.proyectos];
   $("filtros").innerHTML = proys.map(p => `<button type="button" class="f" data-p="${p.id}" aria-pressed="${filtroProy===p.id}">
       ${p.id!=="todos" ? `<span class="tag" style="background:${color(p.id)}"></span>` : ""}${esc(p.id==="todos" ? "Todos" : p.nombre)}</button>`).join("")
-    + `<button type="button" class="f" id="fPub" aria-pressed="${soloPub}">Solo publicaciones</button>`;
-  const lista = ag.filter(x => (filtroProy === "todos" || x.p.id === filtroProy) && (!soloPub || x.tipo.k === "pub"));
+    + (modoAg === "prox" ? `<button type="button" class="f" id="fPub" aria-pressed="${soloPub}">Solo publicaciones</button>` : "");
+  document.querySelectorAll(".mo").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.m === modoAg)));
+  const pub = modoAg === "pub";
+  const lista = pub ? publicadas(s).filter(x => filtroProy === "todos" || x.p.id === filtroProy)
+    : ag.filter(x => (filtroProy === "todos" || x.p.id === filtroProy) && (!soloPub || x.tipo.k === "pub"));
   const grupos = {};
   for (const x of lista) (grupos[diaClave(x.cuando)] ??= []).push(x);
   $("dias").innerHTML = Object.keys(grupos).length ? Object.values(grupos).map(g => `
-    <div class="day"><h3>${capital(relDia(g[0].cuando))} · ${g.length}</h3><div class="box">${g.map(x => evento(x, false)).join("")}</div></div>`).join("")
-    : `<div class="box empty">Nada programado con este filtro.</div>`;
+    <div class="day"><h3>${capital(relDia(g[0].cuando))} · ${g.length}</h3><div class="box">${g.map(x => pub ? evPublicada(x) : evento(x, false)).join("")}</div></div>`).join("")
+    : `<div class="box empty">${pub ? "No hay publicaciones en las últimas 24 h con este filtro." : "Nada programado con este filtro."}</div>`;
 
   $("fichas").innerHTML = s.proyectos.map(p => ficha({...p, instagram_datos: p.ig || null})).join("");
 
@@ -486,6 +517,17 @@ document.addEventListener("click", e => {
 });
 addEventListener("hashchange", vista);
 
+document.addEventListener("click", e => {
+  const m = e.target.closest(".mo"); if (!m) return;
+  modoAg = m.dataset.m;
+  try { localStorage.setItem("cm-modo", modoAg); } catch(_) {}
+  pintar();
+});
+document.addEventListener("click", e => {
+  const l = e.target.closest(".luz.ko"); if (!l) return;
+  const ev = l.closest(".ev"), msg = ev && ev.querySelector(".errmsg"); if (!msg) return;
+  msg.hidden = !msg.hidden; l.setAttribute("aria-expanded", String(!msg.hidden));
+});
 document.addEventListener("click", e => {
   const f = e.target.closest(".f"); if (!f) return;
   if (f.id === "fPub") soloPub = !soloPub; else filtroProy = f.dataset.p;

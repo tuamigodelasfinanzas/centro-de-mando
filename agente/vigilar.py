@@ -4,6 +4,7 @@ Nunca cambia nada por su cuenta: cada arreglo se te propone por Telegram con un 
 cuando lo apruebas (eso lo ejecuta bot.py).
 """
 import hashlib
+import re
 from datetime import datetime, timezone
 import time
 from collections import defaultdict
@@ -19,6 +20,9 @@ MAX_DIAGNOSTICOS = 5                   # llamadas a Gemini por vuelta, para no g
 TEMPORALES = ("timeout", "timed out", "429", "rate", "quota", "502", "503", "504", "ECONNRESET", "temporarily")
 
 TIPOS_PROGRAMADOS = {"weekly", "daily", "monthly", "indefinitely", "on-demand", "once"}
+
+
+INTERNO = re.compile(r"^(AVISO|INFORME|PLANNING|IMPORTAR)|COMPROBAR")
 
 
 def pid(clave):
@@ -84,7 +88,7 @@ def ultima(logs):
 
 def analizar(datos):
     """Devuelve (estado por proyecto, lista de incidencias). Cada incidencia puede llevar una acción propuesta."""
-    por_proyecto = {p["id"]: {"escenarios": [], "incid": [], "runs": []} for p in proyectos()}
+    por_proyecto = {p["id"]: {"escenarios": [], "incid": [], "runs": [], "publicados": []} for p in proyectos()}
     incidencias = []
 
     def incid(proy, nivel, texto, clave, accion=None, error=None, enlace=None):
@@ -117,6 +121,15 @@ def analizar(datos):
         }
         if proy:
             por_proyecto[proy["id"]]["escenarios"].append(fila)
+            # publicaciones recientes: cada ejecución terminada (ok o error) de un escenario que no es interno
+            if not INTERNO.search(s["name"].upper()):
+                for x in logs:
+                    if x.get("status") in (1, 3):
+                        por_proyecto[proy["id"]]["publicados"].append({
+                            "nombre": s["name"], "cuando": x.get("timestamp"), "origen": "Make",
+                            "estado": "ok" if x.get("status") == 1 else "error",
+                            "error": limpiar((x.get("error") or {}).get("message", ""))[:200] or None,
+                            "enlace": url_make_escenario(s["id"])})
 
         # 1. Make lo ha apagado por errores
         if s.get("isinvalid"):
@@ -180,6 +193,14 @@ def analizar(datos):
                       accion, None, u.get("html_url"))
         resumen.sort(key=lambda x: (x["ultimo"] != "failure", x["workflow"]))
         por_proyecto[p["id"]]["runs"] = resumen
+        # workflows de publicación de GitHub (su archivo se llama publish*.yml)
+        for r in runs:
+            if r.get("status") == "completed" and "publish" in (r.get("path") or "") and r.get("conclusion") in ("success", "failure"):
+                por_proyecto[p["id"]]["publicados"].append({
+                    "nombre": r["name"], "cuando": r.get("updated_at"), "origen": "GitHub",
+                    "estado": "ok" if r["conclusion"] == "success" else "error",
+                    "error": None if r["conclusion"] == "success" else "El workflow de GitHub Actions terminó con error (ábrelo para ver el paso que falló)",
+                    "enlace": r.get("html_url")})
 
     return por_proyecto, incidencias
 
@@ -219,6 +240,7 @@ def construir_estado(datos, por_proyecto, cred, propuestas):
                        "fallidas_36h": sum(r["fallidas"] for r in runs)},
             "proximas": [{"nombre": e["nombre"], "cuando": e["proxima"]} for e in prox[:5]],
             "incidencias": incid, "escenarios": esc_, "workflows": runs, "programadas_github": gh_agenda, "ig": ig,
+            "publicados": sorted(d["publicados"], key=lambda x: x.get("cuando") or "", reverse=True)[:80],
         })
     return {"actualizado": iso(ahora_), "creditos": cred, "proyectos": salida,
             "propuestas_abiertas": len(abiertas), "errores_recogida": datos["errores"]}
