@@ -232,6 +232,12 @@ def construir_estado(datos, por_proyecto, cred, propuestas):
         ig = datos.get("ig", {}).get(p["id"])
         prox = sorted(prox + [{"nombre": g["nombre"], "proxima": g["cuando"]} for g in gh_agenda if g["activo"]],
                       key=lambda e: e["proxima"])
+        # cada publicación correcta se enlaza al post de Instagram que salió a la misma hora (±15 min)
+        for x in d["publicados"]:
+            if x["estado"] == "ok" and x.get("cuando") and ig and ig.get("publicaciones"):
+                cerca = min(ig["publicaciones"], key=lambda q: abs((leer_fecha(q["fecha"]) - leer_fecha(x["cuando"])).total_seconds()), default=None)
+                if cerca and cerca.get("enlace") and abs((leer_fecha(cerca["fecha"]) - leer_fecha(x["cuando"])).total_seconds()) <= 15 * 60:
+                    x["instagram"] = cerca["enlace"]
         gh_pubs = [x for x in d["publicados"] if x["origen"] == "GitHub" and x.get("post")]
         for x in d["publicados"]:
             if x["origen"] == "Make" and not x.get("post") and x.get("cuando"):
@@ -510,7 +516,7 @@ SETS_IG = ["reach,saved,shares,total_interactions,views", "reach,saved,shares,to
 NOMBRES_IG = {"reach": "alcance", "saved": "guardados", "shares": "compartidos", "views": "vistas", "total_interactions": "interacciones"}
 
 
-def instagram(p, cuantas=8):
+def instagram(p, cuantas=15):
     """Últimas publicaciones de la cuenta con sus vistas. Token en el secret IG_TOKEN_<PROYECTO> (p. ej. IG_TOKEN_FINANZAS)."""
     import os
     import urllib.parse

@@ -350,7 +350,7 @@ function evPublicada(x){
     <div class="hc"><span class="h">${hm(x.cuando)}</span>${avatar(x.p)}</div>
     <div><div class="pr">
       <button type="button" class="luz ${ok ? "ok" : "ko"}" aria-expanded="false" aria-label="${ok ? "Publicado bien" : "Error al publicar, pulsa para ver el motivo"}" title="${ok ? "Publicado correctamente" : esc(x.error || "Error al publicar")}"></button>
-      <a class="t" href="${x.enlace}" target="_blank" rel="noopener">${esc(x.origen === "GitHub" ? x.nombre : limpiaNombre(x.nombre))}${x.post ? ` <span style="font-weight:500;color:var(--mute)"> - ${esc(x.post)}</span>` : ""}</a></div>
+      <a class="t" href="${x.instagram || x.enlace}" target="_blank" rel="noopener" title="${x.instagram ? "Abrir el post en Instagram" : "Abrir en " + x.origen}">${esc(x.origen === "GitHub" ? x.nombre : limpiaNombre(x.nombre))}${x.post ? ` <span style="font-weight:500;color:var(--mute)"> - ${esc(x.post)}</span>` : ""}</a></div>
       <div class="m"><span class="tag" style="background:${color(x.p.id)}"></span>${esc(x.p.nombre)}<span class="chip">${esc(x.origen)}</span><span>${hace(x.cuando)}</span></div>
       ${ok ? "" : `<div class="errmsg" hidden>${esc(x.error || "Sin detalle del error. Ábrelo para verlo.")}</div>`}
     </div></div>`;
