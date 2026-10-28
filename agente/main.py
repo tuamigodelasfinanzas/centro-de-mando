@@ -10,7 +10,7 @@ from base import ahora, cargar, guardar, iso, leer_fecha
 from bot import atender
 from vigilar import vigilar
 
-CADA = 55 * 60  # segundos entre vigilancias completas
+CADA = 9 * 60  # segundos entre vigilancias completas (el cron de 10 min hace una en cada vuelta)
 
 
 def main():
