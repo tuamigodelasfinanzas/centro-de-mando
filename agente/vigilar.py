@@ -195,7 +195,7 @@ def analizar(datos):
         por_proyecto[p["id"]]["runs"] = resumen
         # workflows de publicación de GitHub (su archivo se llama publish*.yml)
         for r in runs:
-            if r.get("status") == "completed" and "publish" in (r.get("path") or "") and r.get("conclusion") in ("success", "failure"):
+            if r.get("status") == "completed" and es_publicacion(r) and r.get("conclusion") in ("success", "failure"):
                 por_proyecto[p["id"]]["publicados"].append({
                     "nombre": r["name"], "cuando": r.get("updated_at"), "origen": "GitHub",
                     "estado": "ok" if r["conclusion"] == "success" else "error",
@@ -404,12 +404,18 @@ def vigilar(forzar_resumen=False):
 _PUB_MAYORES = {}
 
 
+def es_publicacion(r):
+    """Un run de GitHub es de publicación si su archivo o su nombre hablan de publicar (p. ej. publish.yml, «Publish now (manual)»)."""
+    txt = ((r.get("path") or "") + " " + (r.get("name") or "")).lower()
+    return "publish" in txt or "publicar" in txt
+
+
 def publicado_despues(runs, u):
     """True si un fallo de publicación de GitHub ya se recuperó: después salió bien otra publicación del mismo repo."""
-    if "publish" not in (u.get("path") or ""):
+    if not es_publicacion(u):
         return False
     t = u.get("updated_at") or ""
-    return any(r.get("status") == "completed" and r.get("conclusion") == "success" and "publish" in (r.get("path") or "")
+    return any(r.get("status") == "completed" and r.get("conclusion") == "success" and es_publicacion(r)
                and (r.get("updated_at") or "") > t for r in runs)
 
 
