@@ -185,7 +185,7 @@ def analizar(datos):
             fallidas = [r for r in lista if r.get("conclusion") == "failure"]
             resumen.append({"workflow": wf, "ultimo": u.get("conclusion"), "cuando": u.get("updated_at"),
                             "url": u.get("html_url"), "ejecuciones": len(lista), "fallidas": len(fallidas)})
-            if u.get("conclusion") == "failure":
+            if u.get("conclusion") == "failure" and not publicado_despues(runs, u):
                 accion = None
                 if u.get("run_attempt", 1) < 3:
                     accion = {"tipo": "relanzar_workflow", "repo": p["repo"], "run": u["id"], "nombre": wf}
@@ -199,7 +199,9 @@ def analizar(datos):
                 por_proyecto[p["id"]]["publicados"].append({
                     "nombre": r["name"], "cuando": r.get("updated_at"), "origen": "GitHub",
                     "estado": "ok" if r["conclusion"] == "success" else "error",
-                    "error": None if r["conclusion"] == "success" else "El workflow de GitHub Actions terminó con error (ábrelo para ver el paso que falló)",
+                    "error": None if r["conclusion"] == "success" else (
+                        "Falló, pero el post salió después con otra publicación (recuperado)" if publicado_despues(runs, r)
+                        else "El workflow de GitHub Actions terminó con error (ábrelo para ver el paso que falló)"),
                     "enlace": r.get("html_url"), "post": post_de_run(p, r.get("updated_at"))})
 
     return por_proyecto, incidencias
@@ -400,6 +402,15 @@ def vigilar(forzar_resumen=False):
 
 
 _PUB_MAYORES = {}
+
+
+def publicado_despues(runs, u):
+    """True si un fallo de publicación de GitHub ya se recuperó: después salió bien otra publicación del mismo repo."""
+    if "publish" not in (u.get("path") or ""):
+        return False
+    t = u.get("updated_at") or ""
+    return any(r.get("status") == "completed" and r.get("conclusion") == "success" and "publish" in (r.get("path") or "")
+               and (r.get("updated_at") or "") > t for r in runs)
 
 
 def post_de_run(p, cuando):
