@@ -426,7 +426,7 @@ def post_de_run(p, cuando):
         h, m = map(int, hora.split(":"))
         ref = local.replace(hour=h, minute=m, second=0, microsecond=0)
         dif = abs((local - ref).total_seconds())
-        if dif <= 45 * 60 and (mejor is None or dif < mejor[0]):
+        if dif <= 90 * 60 and (mejor is None or dif < mejor[0]):
             mejor = (dif, franja)
     if not mejor:
         return None
