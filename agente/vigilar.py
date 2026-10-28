@@ -486,7 +486,7 @@ def instagram(p, cuantas=8):
                 return None, f"El token de Meta no da acceso a @{p['instagram']}. Cuentas que sí ve: {vistas}. Al generarlo, marca también su página de Facebook y su cuenta de Instagram"
         if not usuario:
             usuario = get("me", fields="user_id,id").get("user_id") or get("me", fields="id")["id"]
-        cuenta = get(usuario, fields="username,followers_count,media_count")
+        cuenta = get(usuario, fields="username,followers_count,media_count,profile_picture_url")
         media = get(f"{usuario}/media", fields="id,caption,media_type,media_product_type,timestamp,like_count,comments_count,permalink,thumbnail_url,media_url",
                     limit=cuantas).get("data", [])
     except ErrorHTTP as e:
@@ -509,7 +509,7 @@ def instagram(p, cuantas=8):
                 error_metricas = limpiar(e)[:200]
                 continue
         pubs.append(fila)
-    return {"usuario": cuenta.get("username"), "seguidores": cuenta.get("followers_count"),
+    return {"usuario": cuenta.get("username"), "avatar": cuenta.get("profile_picture_url"), "seguidores": cuenta.get("followers_count"),
             "total": cuenta.get("media_count"), "publicaciones": pubs, "leido": iso(ahora()),
             "token_caduca": iso(datetime.fromtimestamp(caduca, timezone.utc)) if caduca else None,
             "permisos": permisos, "error_metricas": error_metricas if not any("alcance" in x or "vistas" in x for x in pubs) else ""}, None

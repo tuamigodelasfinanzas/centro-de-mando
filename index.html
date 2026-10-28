@@ -12,6 +12,7 @@
   --accent:#1c5c53; --accent-ink:#ffffff; --accent-soft:#dcebe7;
   --ok:#1b7a49; --ok-bg:#dcf1e4; --warn:#9a5800; --warn-bg:#fbecd4; --bad:#b3242b; --bad-bg:#fbdedf;
   --c-finanzas:#2f7d5b; --c-pin:#2d63b8; --c-mayores:#c2672b; --c-zero:#7a55b3;
+  --p-finanzas:#e4f4ea; --p-pin:#e4edfb; --p-mayores:#fbeee3; --p-zero:#f0e9fb;
   --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
   --f-body:"Archivo","Helvetica Neue",Arial,sans-serif;
   --f-data:"IBM Plex Mono",ui-monospace,Menlo,monospace;
@@ -21,12 +22,14 @@
   --bg:#0d1312; --panel:#151e1c; --panel-2:#1a2523; --ink:#e3ebe9; --mute:#93a29f; --faint:#6c7b78; --line:#26322f;
   --accent:#6cc4b4; --accent-ink:#0d1312; --accent-soft:#1b3430;
   --ok:#62d394; --ok-bg:#15301f; --warn:#f0b75f; --warn-bg:#342611; --bad:#ff8080; --bad-bg:#3a191b;
-  --c-finanzas:#5cc293; --c-pin:#6f9fef; --c-mayores:#ec9459; --c-zero:#b394ea; color-scheme:dark}}
+  --c-finanzas:#5cc293; --c-pin:#6f9fef; --c-mayores:#ec9459; --c-zero:#b394ea;
+  --p-finanzas:#17302a; --p-pin:#192a40; --p-mayores:#33241a; --p-zero:#271f3b; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0d1312; --panel:#151e1c; --panel-2:#1a2523; --ink:#e3ebe9; --mute:#93a29f; --faint:#6c7b78; --line:#26322f;
   --accent:#6cc4b4; --accent-ink:#0d1312; --accent-soft:#1b3430;
   --ok:#62d394; --ok-bg:#15301f; --warn:#f0b75f; --warn-bg:#342611; --bad:#ff8080; --bad-bg:#3a191b;
-  --c-finanzas:#5cc293; --c-pin:#6f9fef; --c-mayores:#ec9459; --c-zero:#b394ea; color-scheme:dark}
+  --c-finanzas:#5cc293; --c-pin:#6f9fef; --c-mayores:#ec9459; --c-zero:#b394ea;
+  --p-finanzas:#17302a; --p-pin:#192a40; --p-mayores:#33241a; --p-zero:#271f3b; color-scheme:dark}
 
 *{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -143,6 +146,10 @@ h2{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;
 .ev .t{font-weight:600;line-height:1.3;overflow-wrap:anywhere;color:inherit}
 .ev .m{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:5px;font-size:12px;color:var(--mute)}
 .ev.pasado{opacity:.5}
+.ev.pub{border-radius:12px;margin:6px;border-top:0}
+.ev .hc{display:flex;flex-direction:column;gap:7px;align-items:flex-start}
+.av{position:relative;width:30px;height:30px;border-radius:50%;display:inline-grid;place-items:center;overflow:hidden;background:var(--panel);font-size:16px;box-shadow:0 0 0 2px var(--panel)}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .ev.ahora .h{color:var(--accent)}
 .mo{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:600;white-space:nowrap;cursor:pointer;color:inherit}
 .mo[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
@@ -339,8 +346,10 @@ function publicadas(s){
 }
 function evPublicada(x){
   const ok = x.estado === "ok";
-  return `<div class="ev">
-    <span class="h">${hm(x.cuando)}</span>
+  const av = x.p.ig && x.p.ig.avatar;
+  return `<div class="ev pub" style="background:var(--p-${x.p.id})">
+    <div class="hc"><span class="h">${hm(x.cuando)}</span>
+      <span class="av" title="${esc(x.p.nombre)}">${esc(x.p.emoji)}${av ? `<img src="${esc(av)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}</span></div>
     <div><div class="pr">
       <button type="button" class="luz ${ok ? "ok" : "ko"}" aria-expanded="false" aria-label="${ok ? "Publicado bien" : "Error al publicar, pulsa para ver el motivo"}" title="${ok ? "Publicado correctamente" : esc(x.error || "Error al publicar")}"></button>
       <a class="t" href="${x.enlace}" target="_blank" rel="noopener">${esc(limpiaNombre(x.nombre))}</a></div>
