@@ -436,6 +436,7 @@ def instagram(p, cuantas=8):
         return http("GET", f"{api}/{ruta}?{urllib.parse.urlencode(q)}", intentos=2)
 
     caduca = None
+    permisos = []
     if api.startswith("https://graph.facebook.com"):
         try:
             d = get("debug_token", input_token=token).get("data", {})
@@ -443,6 +444,7 @@ def instagram(p, cuantas=8):
                 return None, f"El token de Instagram de {p['nombre']} NO es válido: {limpiar(d.get('error', {}).get('message', ''))[:120]}"
             if d.get("expires_at"):
                 caduca = int(d["expires_at"])
+            permisos = d.get("scopes", [])
         except ErrorHTTP:
             pass
     try:
@@ -488,4 +490,4 @@ def instagram(p, cuantas=8):
     return {"usuario": cuenta.get("username"), "seguidores": cuenta.get("followers_count"),
             "total": cuenta.get("media_count"), "publicaciones": pubs, "leido": iso(ahora()),
             "token_caduca": iso(datetime.fromtimestamp(caduca, timezone.utc)) if caduca else None,
-            "error_metricas": error_metricas if not any("alcance" in x or "vistas" in x for x in pubs) else ""}, None
+            "permisos": permisos, "error_metricas": error_metricas if not any("alcance" in x or "vistas" in x for x in pubs) else ""}, None
