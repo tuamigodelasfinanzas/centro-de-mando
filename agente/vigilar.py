@@ -200,7 +200,7 @@ def analizar(datos):
                     "nombre": r["name"], "cuando": r.get("updated_at"), "origen": "GitHub",
                     "estado": "ok" if r["conclusion"] == "success" else "error",
                     "error": None if r["conclusion"] == "success" else "El workflow de GitHub Actions terminó con error (ábrelo para ver el paso que falló)",
-                    "enlace": r.get("html_url")})
+                    "enlace": r.get("html_url"), "post": post_de_run(p, r.get("updated_at"))})
 
     return por_proyecto, incidencias
 
@@ -230,6 +230,12 @@ def construir_estado(datos, por_proyecto, cred, propuestas):
         ig = datos.get("ig", {}).get(p["id"])
         prox = sorted(prox + [{"nombre": g["nombre"], "proxima": g["cuando"]} for g in gh_agenda if g["activo"]],
                       key=lambda e: e["proxima"])
+        gh_pubs = [x for x in d["publicados"] if x["origen"] == "GitHub" and x.get("post")]
+        for x in d["publicados"]:
+            if x["origen"] == "Make" and not x.get("post") and x.get("cuando"):
+                cerca = min(gh_pubs, key=lambda g: abs((leer_fecha(g["cuando"]) - leer_fecha(x["cuando"])).total_seconds()), default=None)
+                if cerca and abs((leer_fecha(cerca["cuando"]) - leer_fecha(x["cuando"])).total_seconds()) <= 15 * 60:
+                    x["post"] = cerca["post"]
         salida.append({
             "id": p["id"], "nombre": p["nombre"], "emoji": p["emoji"], "instagram": p["instagram"], "repo": p["repo"],
             "carpeta_make": p["carpeta_make"], "semaforo": semaforo(d["incid"]),
@@ -391,6 +397,49 @@ def vigilar(forzar_resumen=False):
         guardar("control.json", control)
     print(f"Vigilancia: {len(incidencias)} incidencias, {nuevas} nuevas, errores de lectura: {len(datos['errores'])}")
     return estado
+
+
+_PUB_MAYORES = {}
+
+
+def post_de_run(p, cuando):
+    """Título del post que salió en una publicación de GitHub, usando el historial (gh-pages: state/published.json)
+    y la franja de content/calendario.json más cercana a la hora del run. Solo proyectos con calendario_github."""
+    cfg = p.get("calendario_github")
+    if not cfg or not cuando:
+        return None
+    import json as _json
+    from base import MADRID
+    gh = GitHub()
+    if p["id"] not in _PUB_MAYORES:
+        try:
+            cal = _json.loads(gh.archivo(p["repo"], cfg["archivo"]))
+            rama, ruta = cfg["publicados"].split(":", 1)
+            hist = _json.loads(gh.archivo(p["repo"], ruta, rama))
+        except (ErrorHTTP, ValueError):
+            hist, cal = {}, {}
+        _PUB_MAYORES[p["id"]] = {"franjas": cal.get("franjas", {}), "hist": hist, "titulos": {}}
+    datos = _PUB_MAYORES[p["id"]]
+    local = leer_fecha(cuando).astimezone(MADRID)
+    mejor = None
+    for franja, hora in datos["franjas"].items():
+        h, m = map(int, hora.split(":"))
+        ref = local.replace(hour=h, minute=m, second=0, microsecond=0)
+        dif = abs((local - ref).total_seconds())
+        if dif <= 45 * 60 and (mejor is None or dif < mejor[0]):
+            mejor = (dif, franja)
+    if not mejor:
+        return None
+    dia = local.strftime("%Y-%m-%d")
+    id_post = next((k for k, v in datos["hist"].items() if v.get("date") == dia and v.get("slot") == mejor[1]), None)
+    if not id_post:
+        return None
+    if id_post not in datos["titulos"]:
+        try:
+            datos["titulos"][id_post] = _json.loads(gh.archivo(p["repo"], cfg["guion"].format(id=id_post))).get("titulo") or id_post
+        except (ErrorHTTP, ValueError):
+            datos["titulos"][id_post] = id_post
+    return datos["titulos"][id_post]
 
 
 def agenda_github(p, dias=3):
