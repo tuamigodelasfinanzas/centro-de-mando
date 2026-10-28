@@ -400,7 +400,7 @@ function pintar(){
 
   $("estadoProy").innerHTML = s.proyectos.map(p => {
     const n = futuras.find(x => x.p.id === p.id);
-    return `<a class="row" href="#proyectos" style="color:inherit"><span class="tag" style="background:${color(p.id)}"></span>
+    return `<a class="row" href="#proyectos" style="color:inherit;background:var(--p-${p.id});border-radius:10px;margin:4px 0"><span class="av" style="width:26px;height:26px;font-size:14px">${esc(p.emoji)}</span>
       <div><div class="t">${esc(p.nombre)}</div><div class="m">${n ? "Próxima " + relDia(n.cuando) + " a las " + hm(n.cuando) : "Sin publicaciones programadas"}</div></div>
       <span class="pill ${p.semaforo}">${ETQ[p.semaforo]}</span></a>`;
   }).join("");
@@ -424,9 +424,9 @@ function pintar(){
   const wfs = s.proyectos.flatMap(p => p.workflows.map(w => ({...w, p})))
     .sort((a,b) => (a.ultimo !== "failure") - (b.ultimo !== "failure") || (b.cuando||"").localeCompare(a.cuando||""));
   $("workflows").innerHTML = wfs.length ? wfs.map(w => `
-    <div class="sc"><span class="mk ${w.ultimo}"></span>
+    <div class="sc" style="background:var(--p-${w.p.id});border-radius:10px;padding:8px 10px"><span class="mk ${w.ultimo}"></span>
       <div><a class="n" href="${w.url}" target="_blank" rel="noopener">${esc(w.workflow)}</a>
-        <div style="font-size:12px;color:var(--mute)"><span class="tag" style="background:${color(w.p.id)};width:6px;height:6px"></span> ${esc(w.p.nombre)}${w.fallidas ? ` · ${w.fallidas} fallo${w.fallidas>1?"s":""} (último bien)` : ""}</div></div>
+        <div style="font-size:12px;color:var(--mute);display:flex;gap:6px;align-items:center">${avatar(w.p)} ${esc(w.p.nombre)}${w.fallidas ? ` · ${w.fallidas} fallo${w.fallidas>1?"s":""} (último bien)` : ""}</div></div>
       <span class="w">${w.ejecuciones}× · ${hace(w.cuando)}</span></div>`).join("")
     : `<div class="empty">Sin ejecuciones en 36 h.</div>`;
   $("creditos").innerHTML = c
@@ -478,8 +478,8 @@ function ficha(p){
   const filas = p.escenarios.map(e => `<div class="sc"><span class="mk ${e.ultimo ? e.ultimo.estado : ""}"></span>
       <a class="n ${e.activo ? "" : "off"}" href="${e.enlace}" target="_blank" rel="noopener">${esc(e.nombre)}${e.activo ? "" : " · apagado"}</a>
       <span class="w">${e.activo && e.proxima ? relDia(e.proxima).slice(0,3) + " " + hm(e.proxima) : "—"}</span></div>`).join("");
-  return `<article class="box proj">
-    <div class="hd"><button type="button" class="pname" data-ig="${p.id}" aria-expanded="${abiertos.has(p.id)}"><h3><span class="tag" style="background:${color(p.id)};width:10px;height:10px"></span>${esc(p.nombre)}</h3>
+  return `<article class="box proj" style="background:var(--p-${p.id})">
+    <div class="hd">${avatar(p)}<button type="button" class="pname" data-ig="${p.id}" aria-expanded="${abiertos.has(p.id)}"><h3><span class="tag" style="background:${color(p.id)};width:10px;height:10px"></span>${esc(p.nombre)}</h3>
       <span class="handle">${p.instagram ? "@" + esc(p.instagram) + " · " : ""}${abiertos.has(p.id) ? "ocultar publicaciones" : "ver últimas publicaciones"}</span></button>
       <span class="pill ${p.semaforo}">${ETQ[p.semaforo]}</span></div>
     ${abiertos.has(p.id) ? publicaciones(p) : ""}
