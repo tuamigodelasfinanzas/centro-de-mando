@@ -1,0 +1,2134 @@
+{
+ "actualizado": "2026-10-31T18:01:31Z",
+ "creditos": {
+  "usados": 4343,
+  "limite": 10000,
+  "pct": 43
+ },
+ "proyectos": [
+  {
+   "id": "finanzas",
+   "nombre": "Tu Amigo de las Finanzas",
+   "emoji": "💶",
+   "instagram": "tuamigodelasfinanzas",
+   "repo": "tuamigodelasfinanzas/resumen-bolsa-reel",
+   "carpeta_make": 408152,
+   "semaforo": "verde",
+   "make": {
+    "total": 42,
+    "activos": 37,
+    "ejecuciones_36h": 18,
+    "fallos_36h": 1,
+    "recuperados_36h": 1
+   },
+   "github": {
+    "workflows": 7,
+    "ejecuciones_36h": 41,
+    "fallidas_36h": 0
+   },
+   "proximas": [
+    {
+     "nombre": "HISTORIA luz de mañana (diaria 20:20)",
+     "cuando": "2026-10-31T19:20:00.000Z"
+    },
+    {
+     "nombre": "REEL del carrusel de vida cotidiana (sábado 20:40, del viernes)",
+     "cuando": "2026-10-31T19:40:00.000Z"
+    },
+    {
+     "nombre": "AVISO TikTok por Telegram (diario 21:30)",
+     "cuando": "2026-10-31T20:30:00.000Z"
+    },
+    {
+     "nombre": "REEL del carrusel de vivienda (domingo 10:00, del sábado)",
+     "cuando": "2026-11-01T09:00:00.000Z"
+    },
+    {
+     "nombre": "HISTORIA pregunta de la semana (domingo 11:00)",
+     "cuando": "2026-11-01T10:00:00.000Z"
+    }
+   ],
+   "incidencias": [],
+   "escenarios": [
+    {
+     "id": 8030873,
+     "nombre": "HISTORIA luz de mañana (diaria 20:20)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-10-31T19:20:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8030873/edit",
+     "ejecuciones": 1,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": {
+      "estado": "ok",
+      "cuando": "2026-10-30T19:20:03.430Z",
+      "error": ""
+     }
+    },
+    {
+     "id": 8082604,
+     "nombre": "REEL del carrusel de vida cotidiana (sábado 20:40, del viernes)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-10-31T19:40:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8082604/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8061627,
+     "nombre": "AVISO TikTok por Telegram (diario 21:30)",
+     "activo": true,
+     "tipo": "daily",
+     "proxima": "2026-10-31T20:30:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8061627/edit",
+     "ejecuciones": 1,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": {
+      "estado": "ok",
+      "cuando": "2026-10-30T20:30:07.345Z",
+      "error": ""
+     }
+    },
+    {
+     "id": 8082500,
+     "nombre": "REEL del carrusel de vivienda (domingo 10:00, del sábado)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-01T09:00:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8082500/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8027771,
+     "nombre": "HISTORIA pregunta de la semana (domingo 11:00)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-01T10:00:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8027771/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8030880,
+     "nombre": "CARRUSEL la semana en datos (domingo 12:00)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-01T11:00:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8030880/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8025705,
+     "nombre": "CARRUSEL calendario de la semana (domingo 17:30)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-01T16:30:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8025705/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8082501,
+     "nombre": "REEL del carrusel la semana en datos (domingo 20:40)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-01T19:40:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8082501/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8076069,
+     "nombre": "PLANNING semanal por Telegram (domingo 21:00)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-01T20:00:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8076069/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8021197,
+     "nombre": "EN 30 SEGUNDOS (reel lunes 07:40)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-02T06:40:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8021197/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8061817,
+     "nombre": "AVISO TikTok En 30 segundos (lunes 08:30)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-02T07:30:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8061817/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8025860,
+     "nombre": "HISTORIA hoy en los mercados (lunes 08:30)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-02T07:30:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8025860/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8029808,
+     "nombre": "INFORME semanal de resultados (lunes 09:00)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-02T08:00:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8029808/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8031323,
+     "nombre": "HISTORIA Euríbor (mensual, días 2-12 12:00)",
+     "activo": true,
+     "tipo": "monthly",
+     "proxima": "2026-11-02T11:00:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8031323/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8058606,
+     "nombre": "CARRUSEL reacción Euríbor (días 2-12, 12:30)",
+     "activo": true,
+     "tipo": "monthly",
+     "proxima": "2026-11-02T11:30:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8058606/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8020682,
+     "nombre": "CARRUSEL educativo (lunes 13:30)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-02T12:30:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8020682/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8058840,
+     "nombre": "HISTORIA Palabra del día (L-V 18:00)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-02T17:00:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8058840/edit",
+     "ejecuciones": 1,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": {
+      "estado": "ok",
+      "cuando": "2026-10-30T17:00:28.708Z",
+      "error": ""
+     }
+    },
+    {
+     "id": 8016547,
+     "nombre": "RESUMEN BOLSA (reel martes a sábado 07:40)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-03T06:40:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8016547/edit",
+     "ejecuciones": 2,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": {
+      "estado": "ok",
+      "cuando": "2026-10-31T06:40:04.233Z",
+      "error": ""
+     }
+    },
+    {
+     "id": 8061816,
+     "nombre": "AVISO TikTok resumen de bolsa (mar-sáb 09:00)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-03T08:00:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8061816/edit",
+     "ejecuciones": 2,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": {
+      "estado": "ok",
+      "cuando": "2026-10-31T08:00:39.855Z",
+      "error": ""
+     }
+    },
+    {
+     "id": 8054883,
+     "nombre": "CARRUSEL trámites y ayudas (martes 13:30)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-03T12:30:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8054883/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8027765,
+     "nombre": "CARRUSEL ahorro y presupuesto (martes 17:30)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-03T16:30:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8027765/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8082600,
+     "nombre": "REEL del carrusel educativo (martes 20:40, del lunes)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-03T19:40:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8082600/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8031597,
+     "nombre": "HISTORIA calculadora (miércoles 13:00)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-04T12:00:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8031597/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8048662,
+     "nombre": "CARRUSEL alerta estafa (miércoles 13:30)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-04T12:30:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8048662/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8021814,
+     "nombre": "CARRUSEL 1.000 euros hace N años (miércoles 17:30)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-04T16:30:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8021814/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8082602,
+     "nombre": "REEL del carrusel de trámites (miércoles 20:40, del martes)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-04T19:40:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8082602/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8048664,
+     "nombre": "CARRUSEL Renta (jueves 13:00, solo en campaña)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-05T12:00:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8048664/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8031322,
+     "nombre": "HISTORIA carburantes (jueves 13:00)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-05T12:00:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8031322/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8020683,
+     "nombre": "CARRUSEL mitos y datos (jueves 13:30)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-05T12:30:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8020683/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8082498,
+     "nombre": "REEL del carrusel de estafas (jueves 20:40, del miércoles)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-05T19:40:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8082498/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8027768,
+     "nombre": "CARRUSEL vida cotidiana (viernes 13:30)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-06T12:30:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8027768/edit",
+     "ejecuciones": 1,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": {
+      "estado": "ok",
+      "cuando": "2026-10-30T12:30:15.227Z",
+      "error": ""
+     }
+    },
+    {
+     "id": 8082499,
+     "nombre": "REEL del carrusel de mitos (viernes 20:40, del jueves)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-06T19:40:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8082499/edit",
+     "ejecuciones": 1,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": {
+      "estado": "ok",
+      "cuando": "2026-10-30T19:40:03.410Z",
+      "error": ""
+     }
+    },
+    {
+     "id": 8027787,
+     "nombre": "REEL un consejo para tu bolsillo (sábado 10:00)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-07T09:00:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8027787/edit",
+     "ejecuciones": 1,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": {
+      "estado": "ok",
+      "cuando": "2026-10-31T09:00:14.780Z",
+      "error": ""
+     }
+    },
+    {
+     "id": 8048660,
+     "nombre": "CARRUSEL vivienda (sábado 12:00)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-07T11:00:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8048660/edit",
+     "ejecuciones": 1,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": {
+      "estado": "ok",
+      "cuando": "2026-10-31T11:00:13.436Z",
+      "error": ""
+     }
+    },
+    {
+     "id": 8031325,
+     "nombre": "HISTORIA IPC (mensual, días 12-19 12:00)",
+     "activo": true,
+     "tipo": "monthly",
+     "proxima": "2026-11-12T11:00:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8031325/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8058603,
+     "nombre": "CARRUSEL reacción IPC (días 12-19, 12:30)",
+     "activo": true,
+     "tipo": "monthly",
+     "proxima": "2026-11-12T11:30:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8058603/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8018005,
+     "nombre": "RESUMEN BOLSA - publicar Reel",
+     "activo": true,
+     "tipo": "immediately",
+     "proxima": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8018005/edit",
+     "ejecuciones": 7,
+     "fallos": 1,
+     "recuperados": 1,
+     "ultimo": {
+      "estado": "ok",
+      "cuando": "2026-10-31T11:03:49.195Z",
+      "error": ""
+     }
+    },
+    {
+     "id": 8030876,
+     "nombre": "HISTORIA Los mercados hoy (L-V 18:00) [PAUSADA]",
+     "activo": false,
+     "tipo": "weekly",
+     "proxima": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8030876/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8011629,
+     "nombre": "IMPORTAR_STOCKS_RELEVANTES",
+     "activo": false,
+     "tipo": "indefinitely",
+     "proxima": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8011629/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8084914,
+     "nombre": "REEL cuánto cuesta (lunes 19:00)",
+     "activo": false,
+     "tipo": "weekly",
+     "proxima": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8084914/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8084916,
+     "nombre": "REEL cuánto cuesta (miércoles 10:30)",
+     "activo": false,
+     "tipo": "weekly",
+     "proxima": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8084916/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8082603,
+     "nombre": "REEL del carrusel de ahorro (martes 20:50)",
+     "activo": false,
+     "tipo": "weekly",
+     "proxima": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8082603/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    }
+   ],
+   "workflows": [
+    {
+     "workflow": "Aviso diario de vídeos para TikTok (Telegram)",
+     "ultimo": "success",
+     "cuando": "2026-10-31T08:01:00Z",
+     "url": "https://github.com/tuamigodelasfinanzas/resumen-bolsa-reel/actions/runs/41182829060",
+     "ejecuciones": 3,
+     "fallidas": 0
+    },
+    {
+     "workflow": "Carrusel semanal",
+     "ultimo": "success",
+     "cuando": "2026-10-31T11:06:10Z",
+     "url": "https://github.com/tuamigodelasfinanzas/resumen-bolsa-reel/actions/runs/41195017424",
+     "ejecuciones": 2,
+     "fallidas": 0
+    },
+    {
+     "workflow": "Historia de datos (luz, mercados y palabra del día)",
+     "ultimo": "success",
+     "cuando": "2026-10-30T19:24:38Z",
+     "url": "https://github.com/tuamigodelasfinanzas/resumen-bolsa-reel/actions/runs/41114391008",
+     "ejecuciones": 2,
+     "fallidas": 0
+    },
+    {
+     "workflow": "Reel En 30 segundos",
+     "ultimo": "success",
+     "cuando": "2026-10-31T09:09:00Z",
+     "url": "https://github.com/tuamigodelasfinanzas/resumen-bolsa-reel/actions/runs/41187063182",
+     "ejecuciones": 1,
+     "fallidas": 0
+    },
+    {
+     "workflow": "Reel del carrusel del día",
+     "ultimo": "success",
+     "cuando": "2026-10-30T19:40:21Z",
+     "url": "https://github.com/tuamigodelasfinanzas/resumen-bolsa-reel/actions/runs/41117104738",
+     "ejecuciones": 1,
+     "fallidas": 0
+    },
+    {
+     "workflow": "Reel diario",
+     "ultimo": "success",
+     "cuando": "2026-10-31T06:48:51Z",
+     "url": "https://github.com/tuamigodelasfinanzas/resumen-bolsa-reel/actions/runs/41177633850",
+     "ejecuciones": 2,
+     "fallidas": 0
+    },
+    {
+     "workflow": "pages build and deployment",
+     "ultimo": "success",
+     "cuando": "2026-10-31T11:05:29Z",
+     "url": "https://github.com/tuamigodelasfinanzas/resumen-bolsa-reel/actions/runs/41195343806",
+     "ejecuciones": 30,
+     "fallidas": 0
+    }
+   ],
+   "programadas_github": [],
+   "ig": {
+    "usuario": "tuamigodelasfinanzas",
+    "avatar": "https://scontent-iad6-1.xx.fbcdn.net/v/t51.82787-15/858025954_18118684451284269_4015799114203390409_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=7d201b&_nc_ohc=Xlct039ZnzIQ7kNvwFR7J4H&_nc_oc=AdpzzhzQyV79lkOFSVaIA4CHDtUjb8GzkMW50O4bGXU2Ewt0IaSeKxiHiW0v3cpiVaQ&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&edm=AJ-jyNUEAAAA&_nc_gid=MS4-yqigDxRFK1Q_UsZqNw&oh=00_AQRxPaB2sxBsc19JrjgdlN9IFFXNRx-FO_oxmAJ85_REdw&oe=6AEBF683",
+    "seguidores": 147,
+    "total": 48,
+    "publicaciones": [
+     {
+      "tipo": "Carrusel",
+      "fecha": "2026-10-31T11:04:24+0000",
+      "texto": "¿Cómo ahorrar la entrada de un piso? 🏠 Un plan por años y por meses.",
+      "enlace": "https://www.instagram.com/p/DfKAdh0jY2_/",
+      "miniatura": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/883558613_18120101549284269_4504823331199314879_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=eYlQIAcM4OoQ7kNvwEZQteL&_nc_oc=Ado2uGWJoW6s32d7PXSQeIN-xd1Uy6NjhvCdkWZCUc8OWCgYDaT09a8wiY3tJ1xUHWI&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=WW8izqZ_t_ehV0PqtiGvyA&oh=00_AQTTLv4urJjS0scOlW6JzD2plfRiAFVnmRl3dIvH2k6Eww&oe=6AEC0AC8",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 0,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 0
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-31T09:07:05+0000",
+      "texto": "Cuánto cuesta mantener un coche al mes: cuando compramos un vehículo solemos pensar solo en la cuota o el combustible ⛽,",
+      "enlace": "https://www.instagram.com/reel/DfJy-_vknib/",
+      "miniatura": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/883558579_1274731954843020_3700782460221698008_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=VxTG0MxKh5MQ7kNvwHxh6VH&_nc_oc=AdpfVAX62hr32Y1NHKF5eaZaycjKNmR_HhfmPvcNZeXi2BOx_iAt7zJurZmRtzQecrU&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=WW8izqZ_t_ehV0PqtiGvyA&_nc_tpa=Q5bMBQLnZGpCLq6b-6D709wlCzAp-otcj6wCkaNZyo9ytDZtYSnAJBgTSJxcflT3RMnJzn2rd24QyAg6oQ&oh=00_AQTqwCI1R6KeLdM-73-3uCoeFIQ3j4JkEvwlHTDjsX1DMA&oe=6AEBF1EE",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 4,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 5
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-31T06:45:41+0000",
+      "texto": "Fuerte caída en Wall Street 📊",
+      "enlace": "https://www.instagram.com/reel/DfJixbsDsL6/",
+      "miniatura": "https://scontent-iad3-1.cdninstagram.com/v/t51.71878-15/878353935_922621364121484_8479600200872071901_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=ANVZxsbGf8gQ7kNvwF8PC4H&_nc_oc=AdqNjqc2_ZPeX31S17NIzXVnBf6FBz_x8thTCoKQXiCK9hH70N7ZppSy7Adc022FZVs&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=WW8izqZ_t_ehV0PqtiGvyA&_nc_tpa=Q5bMBQJM0LArI9v1Le-kWLK1pnyOZIccXCetI7rt8LA1LPEA8AoENhnkkjfBGh5TVvOVoKJ5kEVFuAPHtA&oh=00_AQTffUCdTPZ8KMDCVfPvgCsmB-jIX1Qbj3hhWNewKkDX0Q&oe=6AEC1273",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 63,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 69
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-30T19:42:04+0000",
+      "texto": "El 19 de octubre de 1987 el Dow Jones cayó un 22,6 % en una sola sesión 📉",
+      "enlace": "https://www.instagram.com/reel/DfIW0Tmlryv/",
+      "miniatura": "https://scontent-iad3-1.cdninstagram.com/v/t51.71878-15/860589843_1852612162582299_2755701367517318073_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=LI8aMmQXHu8Q7kNvwEXS3aZ&_nc_oc=AdqexxIWQfm2_BwvRN4Zwa4VS2wca9cMeGQdfSpntY-GdrxSt5ALQ35r6lMeESdYgd4&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=WW8izqZ_t_ehV0PqtiGvyA&_nc_tpa=Q5bMBQInBhwBSJnt_CPs1gSH1wXfJWurZPBXwlkwJInpzcrOE_bITfrbvnLCUyb-HyH29m0gV1lng4l3kA&oh=00_AQQqHuBhJVxQdtrv2Ju3DUGWCxvcP1buU0jI5AcVRWmv6A&oe=6AEBE5F4",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 29,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 30
+     },
+     {
+      "tipo": "Carrusel",
+      "fecha": "2026-10-30T14:06:56+0000",
+      "texto": "Cómo pensar en tu jubilación 🧓 Sin asustarte y sin dejarlo para el final.",
+      "enlace": "https://www.instagram.com/p/DfHwjfglalv/",
+      "miniatura": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/876519532_18120003515284269_5248189235035623681_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=uICIqpWSdTwQ7kNvwHIJkbZ&_nc_oc=AdolH-aG3oIk7_nADR3zeTANIYxB91AkjXSIdYUDoO-jMjauK3SSJXbmywnklORgWys&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=WW8izqZ_t_ehV0PqtiGvyA&oh=00_AQTsvK29qeG-lFD6hBeuwKXzEf67C7B1wgTvTn-Anuhr7w&oe=6AEC19A2",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 1,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 2
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-30T07:27:23+0000",
+      "texto": "Leves caídas en Wall Street 📊",
+      "enlace": "https://www.instagram.com/reel/DfHCxmUj9RT/",
+      "miniatura": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/873067975_2510801522742865_8484632883768917925_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=hR58TyTX9KEQ7kNvwFAQTNa&_nc_oc=AdotpPfZAwl3nRTMtPzsm-51xf_-LplTSQn_8vRrjU-iEYdPeE6yc9gekmOK00zRO8g&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=WW8izqZ_t_ehV0PqtiGvyA&_nc_tpa=Q5bMBQKG7R6U3KhMpWn8Pauvi4MF3XjzIVbOMftAx8XiSl1Elh4He3fFpBxViVXuXSyCQpXSFAYym1xsfg&oh=00_AQRoPArDM6USwScYDQ-a6_9MQXAWbk2BCtvj6mQR6dtuSA&oe=6AEC19C6",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 73,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 83
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-29T19:41:00+0000",
+      "texto": "Alerta estafa 🚨 Una llamada con la voz de un familiar: puede ser inteligencia artificial.",
+      "enlace": "https://www.instagram.com/reel/DfFx6nKjAMu/",
+      "miniatura": "https://scontent-iad3-2.cdninstagram.com/v/t51.71878-15/878539954_28994034963571096_902054685162903378_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=CfL2wPOe074Q7kNvwE0u991&_nc_oc=AdrzfpnMst03Op9rmjVXnturNEFWJvtEqqsAwUtkYDVTVscUu7zjsVOMzSWqdwBQ8og&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=WW8izqZ_t_ehV0PqtiGvyA&_nc_tpa=Q5bMBQJhCzJEOsw98Azr4NzfTYu7xI95L9kWhP3cTF5hyQv7irxp_Toch7M75w89VqtDYLIdvTPKyLDrHQ&oh=00_AQSP4gmgykyLoDw7JFkybIG1L6n9nfcepNJnjH-yN5y8qQ&oe=6AEBFCF2",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 5,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 8
+     },
+     {
+      "tipo": "Carrusel",
+      "fecha": "2026-10-29T12:35:23+0000",
+      "texto": "El 19 de octubre de 1987 el Dow Jones cayó un 22,6 % en una sola sesión 📉",
+      "enlace": "https://www.instagram.com/p/DfFBSCTDMUw/",
+      "miniatura": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/877719656_18119865884284269_8702934726800241679_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=QVM1-SQRmnMQ7kNvwFamCnr&_nc_oc=AdoIZ62JCLqOFg8A-UxjCHAd0QfPne2MiNZWD3PN5KgwI9DGS-nB0gd0PCjjOC28AF8&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=WW8izqZ_t_ehV0PqtiGvyA&oh=00_AQRdtNVI0OSuY21kUN4Nmpowx0uIGKJCSpdIedx3wHNjsA&oe=6AEBE9B7",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 4,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 19
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-29T06:46:59+0000",
+      "texto": "Leves subidas en Wall Street 📊",
+      "enlace": "https://www.instagram.com/reel/DfEZUm8gA03/",
+      "miniatura": "https://scontent-iad3-1.cdninstagram.com/v/t51.71878-15/868348988_1084187931109104_712488355338694345_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=A8ciPMlXPPcQ7kNvwF3ThUU&_nc_oc=AdqWzmq1_LoVjlk0Zfo0It6Y32W1aWrhtWLwc4qpyqhjI_urHeMgmvn4gXW2ntZQEIc&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=WW8izqZ_t_ehV0PqtiGvyA&_nc_tpa=Q5bMBQIO1_q-is1K0ylFgoltMdYNna_HHGBdCLqfqlI278nezRj3DuPTZqW6_3Dtsy62zoyU9kpu5qobVg&oh=00_AQQEGl-7XEuB3VoikHLU24o3eiDUR910HEOnLOF8yxRLZg&oe=6AEC154E",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 58,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 65
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-28T19:41:17+0000",
+      "texto": "Trámites y ayudas: Puedes simular tu pensión 📋 Qué hacer, dónde y con qué, sin vueltas.",
+      "enlace": "https://www.instagram.com/reel/DfDNI4gD8EM/",
+      "miniatura": "https://scontent-iad3-1.cdninstagram.com/v/t51.71878-15/874399969_2164945604097356_5510646195412189108_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=It-8CfnkEt4Q7kNvwG_Prn3&_nc_oc=Adp8hVDpnt-qwuwHk_DC0QiIxkQJ0FKoLkmwBasLBO3aGVctyfJSETGWFHl7M1Cr2VE&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=WW8izqZ_t_ehV0PqtiGvyA&_nc_tpa=Q5bMBQKwYRHWUAK9YmXFTR_Wf3jQGeLa8Ks1HUNZXaC2bM9L8fWHBO6Uher5PuMFDtzVlT0h8wT4TzqPCw&oh=00_AQTPQyCmFAhyDxx1TYpsEtqv70j5WRSgr1yliJnen8cI4Q&oe=6AEC1185",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 7,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 13
+     },
+     {
+      "tipo": "Carrusel",
+      "fecha": "2026-10-28T16:35:41+0000",
+      "texto": "💶 1.000 € en el S&P 500 hace 10 años… hoy serían 4.186 €.",
+      "enlace": "https://www.instagram.com/p/DfC3_HrEVLw/",
+      "miniatura": "https://scontent-iad3-2.cdninstagram.com/v/t51.82787-15/869688671_18119745494284269_587413397577983265_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=AIR6COGVv7IQ7kNvwEua1O-&_nc_oc=AdrulW3BzT657AemsMhvT48Up7ZADk5_8jeMKdNrgaRxiaNK4x0cz-Ys5n3lu3sEsac&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=WW8izqZ_t_ehV0PqtiGvyA&oh=00_AQQESKWTncUS42-1GdoUUrT0xUamw2hUChlmBMcPk8ddeQ&oe=6AEBF450",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 4,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 10
+     },
+     {
+      "tipo": "Carrusel",
+      "fecha": "2026-10-28T12:35:47+0000",
+      "texto": "Alerta estafa 🚨 Una llamada con la voz de un familiar: puede ser inteligencia artificial.",
+      "enlace": "https://www.instagram.com/p/DfCch15COBs/",
+      "miniatura": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/871794676_18119712437284269_2979970780223427525_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=w31tU-6GN-QQ7kNvwHrqiyx&_nc_oc=AdqSpKjQX0imRAoFXKtG-4KeQ5Xn5XMEeRZfL7lbHrugLscDV1SEcKAAY03NL1Y6yec&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=WW8izqZ_t_ehV0PqtiGvyA&oh=00_AQSQcwMP0rUxQT8hBC37AR6FriVS2ZiNUKiaMH9BrrWtaw&oe=6AEBFB18",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 10,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 27
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-28T06:46:56+0000",
+      "texto": "Leves subidas en Wall Street 📊",
+      "enlace": "https://www.instagram.com/reel/DfB0iXiD9-N/",
+      "miniatura": "https://scontent-iad3-2.cdninstagram.com/v/t51.71878-15/870018754_1130016672728819_3968245483995374478_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=lkC4_uFCFaQQ7kNvwF1pkOQ&_nc_oc=AdrS5AI6GahMA-YQAsORW_HLW1qVCRhbatYDqK_ZHT-7fLgWbMtjG5o5oWTXxqwhkR4&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=WW8izqZ_t_ehV0PqtiGvyA&_nc_tpa=Q5bMBQLuN4_n8FiY2-4Xd2InsGUjj7XXxxTgxrTaPy6Tla-ar8d3WVXmYju9mQxtFgMouu6tbTZZfeWJdQ&oh=00_AQSJXWrUcVhPn4KpknoovOr5_eN99LgknVen7xq0b3bnSQ&oe=6AEBF868",
+      "me_gusta": 1,
+      "comentarios": 0,
+      "alcance": 108,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 1,
+      "vistas": 118
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-27T19:41:33+0000",
+      "texto": "¿Qué es el interés compuesto? 📈 La fuerza que hace crecer el dinero con el tiempo.",
+      "enlace": "https://www.instagram.com/reel/DfAoYJuAt10/",
+      "miniatura": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/871382053_1808902910142592_2267340488910039462_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=ZjDq9XyNQScQ7kNvwH6X16s&_nc_oc=AdoaPcIJ6XWlbG4XlesVvAlJ87ivZn3wumCnu84aWLY-kaONGsqO4GtH4zyMwBP1WAs&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=WW8izqZ_t_ehV0PqtiGvyA&_nc_tpa=Q5bMBQICd9mFsckDZ54iYIou0PdoW6XPjyOdHXmCddkdxn8KH3lfjCp5vWJDpmo4DRfXLekItUu2gKDpuw&oh=00_AQQ1CvC_SmFX4C7S-tzqfLUBquB9p5FQsdtNi0nLOusnUQ&oe=6AEBED20",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 15,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 20
+     },
+     {
+      "tipo": "Carrusel",
+      "fecha": "2026-10-27T16:39:20+0000",
+      "texto": "Tu primer sueldo 🥳 Lo que conviene hacer desde el primer mes.",
+      "enlace": "https://www.instagram.com/p/DfATldiiBmh/",
+      "miniatura": "https://scontent-iad3-2.cdninstagram.com/v/t51.82787-15/867154438_18119595638284269_1138425024368776186_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=tWDvZ3o3tq8Q7kNvwH4aT6w&_nc_oc=Adoa_4-sCsX3Szwq8hiqdSQ7fzN_FTRJwPzPeU2oTp649AwZ4IwoeexDacTXyBf0I3E&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=WW8izqZ_t_ehV0PqtiGvyA&oh=00_AQTqH-9iTzwusjE5d-qBNUHGmeTTw98M0jXDH6le8HUKaw&oe=6AEC0CF9",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 4,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 8
+     }
+    ],
+    "leido": "2026-10-31T18:00:58Z",
+    "token_caduca": null,
+    "permisos": [
+     "pages_show_list",
+     "business_management",
+     "instagram_basic",
+     "instagram_manage_comments",
+     "instagram_manage_insights",
+     "instagram_content_publish",
+     "instagram_manage_messages",
+     "pages_read_engagement",
+     "instagram_manage_contents",
+     "public_profile"
+    ],
+    "error_metricas": ""
+   },
+   "publicados": [
+    {
+     "nombre": "RESUMEN BOLSA - publicar Reel",
+     "cuando": "2026-10-31T11:03:49.195Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8018005/edit",
+     "instagram": "https://www.instagram.com/p/DfKAdh0jY2_/"
+    },
+    {
+     "nombre": "CARRUSEL vivienda (sábado 12:00)",
+     "cuando": "2026-10-31T11:00:13.436Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8048660/edit",
+     "instagram": "https://www.instagram.com/p/DfKAdh0jY2_/"
+    },
+    {
+     "nombre": "RESUMEN BOLSA - publicar Reel",
+     "cuando": "2026-10-31T09:06:31.199Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8018005/edit",
+     "instagram": "https://www.instagram.com/reel/DfJy-_vknib/"
+    },
+    {
+     "nombre": "REEL un consejo para tu bolsillo (sábado 10:00)",
+     "cuando": "2026-10-31T09:00:14.780Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8027787/edit",
+     "instagram": "https://www.instagram.com/reel/DfJy-_vknib/"
+    },
+    {
+     "nombre": "RESUMEN BOLSA - publicar Reel",
+     "cuando": "2026-10-31T06:44:15.632Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8018005/edit",
+     "instagram": "https://www.instagram.com/reel/DfJixbsDsL6/"
+    },
+    {
+     "nombre": "RESUMEN BOLSA (reel martes a sábado 07:40)",
+     "cuando": "2026-10-31T06:40:04.233Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8016547/edit",
+     "instagram": "https://www.instagram.com/reel/DfJixbsDsL6/"
+    },
+    {
+     "nombre": "RESUMEN BOLSA - publicar Reel",
+     "cuando": "2026-10-30T19:40:17.629Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8018005/edit",
+     "instagram": "https://www.instagram.com/reel/DfIW0Tmlryv/"
+    },
+    {
+     "nombre": "REEL del carrusel de mitos (viernes 20:40, del jueves)",
+     "cuando": "2026-10-30T19:40:03.410Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8082499/edit",
+     "instagram": "https://www.instagram.com/reel/DfIW0Tmlryv/"
+    },
+    {
+     "nombre": "HISTORIA luz de mañana (diaria 20:20)",
+     "cuando": "2026-10-30T19:20:03.430Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8030873/edit"
+    },
+    {
+     "nombre": "HISTORIA Palabra del día (L-V 18:00)",
+     "cuando": "2026-10-30T17:00:28.708Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8058840/edit"
+    },
+    {
+     "nombre": "RESUMEN BOLSA - publicar Reel",
+     "cuando": "2026-10-30T14:06:23.440Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8018005/edit",
+     "instagram": "https://www.instagram.com/p/DfHwjfglalv/"
+    },
+    {
+     "nombre": "CARRUSEL vida cotidiana (viernes 13:30)",
+     "cuando": "2026-10-30T12:30:15.227Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8027768/edit"
+    },
+    {
+     "nombre": "RESUMEN BOLSA - publicar Reel",
+     "cuando": "2026-10-30T07:26:46.796Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8018005/edit",
+     "instagram": "https://www.instagram.com/reel/DfHCxmUj9RT/"
+    },
+    {
+     "nombre": "RESUMEN BOLSA - publicar Reel",
+     "cuando": "2026-10-30T06:46:32.707Z",
+     "origen": "Make",
+     "estado": "error",
+     "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons. (190, OAuthException)",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8018005/edit"
+    },
+    {
+     "nombre": "RESUMEN BOLSA (reel martes a sábado 07:40)",
+     "cuando": "2026-10-30T06:40:03.094Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8016547/edit"
+    }
+   ]
+  },
+  {
+   "id": "pin",
+   "nombre": "Planet in Numbers",
+   "emoji": "🌍",
+   "instagram": "theplanetinnumbers",
+   "repo": "tuamigodelasfinanzas/planet-in-numbers",
+   "carpeta_make": 407346,
+   "semaforo": "rojo",
+   "make": {
+    "total": 7,
+    "activos": 5,
+    "ejecuciones_36h": 11,
+    "fallos_36h": 1,
+    "recuperados_36h": 1
+   },
+   "github": {
+    "workflows": 2,
+    "ejecuciones_36h": 8,
+    "fallidas_36h": 2
+   },
+   "proximas": [
+    {
+     "nombre": "PIN · Franja A 06:00 (reel principal, L-V y D)",
+     "cuando": "2026-11-01T04:52:00.000Z"
+    },
+    {
+     "nombre": "PIN · Franja B 11:00 (carruseles M-J-D y quiz S)",
+     "cuando": "2026-11-01T09:52:00.000Z"
+    },
+    {
+     "nombre": "PIN · Franja C 18:00 (L-X-V juegos/reels + S Mundial)",
+     "cuando": "2026-11-02T16:52:00.000Z"
+    }
+   ],
+   "incidencias": [
+    {
+     "proyecto": "pin",
+     "nivel": "rojo",
+     "texto": "Falló el workflow «Publish post» de GitHub",
+     "clave": "gh:tuamigodelasfinanzas/planet-in-numbers:41221733905:1",
+     "accion": {
+      "tipo": "relanzar_workflow",
+      "repo": "tuamigodelasfinanzas/planet-in-numbers",
+      "run": 41221733905,
+      "nombre": "Publish post"
+     },
+     "error": null,
+     "enlace": "https://github.com/tuamigodelasfinanzas/planet-in-numbers/actions/runs/41221733905",
+     "propuesta": "0e71a590"
+    }
+   ],
+   "escenarios": [
+    {
+     "id": 8087809,
+     "nombre": "PIN · Franja A 06:00 (reel principal, L-V y D)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-01T04:52:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8087809/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8087814,
+     "nombre": "PIN · Franja B 11:00 (carruseles M-J-D y quiz S)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-01T09:52:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8087814/edit",
+     "ejecuciones": 1,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": {
+      "estado": "ok",
+      "cuando": "2026-10-31T09:52:04.366Z",
+      "error": ""
+     }
+    },
+    {
+     "id": 8087818,
+     "nombre": "PIN · Franja C 18:00 (L-X-V juegos/reels + S Mundial)",
+     "activo": true,
+     "tipo": "weekly",
+     "proxima": "2026-11-02T16:52:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8087818/edit",
+     "ejecuciones": 2,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": {
+      "estado": "ok",
+      "cuando": "2026-10-31T16:52:03.614Z",
+      "error": ""
+     }
+    },
+    {
+     "id": 8087820,
+     "nombre": "PIN · Comprobar conexión con GitHub (no publica nada)",
+     "activo": true,
+     "tipo": "on-demand",
+     "proxima": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8087820/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8088028,
+     "nombre": "PIN · Publicar (Instagram + Facebook + YouTube)",
+     "activo": true,
+     "tipo": "immediately",
+     "proxima": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8088028/edit",
+     "ejecuciones": 8,
+     "fallos": 1,
+     "recuperados": 1,
+     "ultimo": {
+      "estado": "ok",
+      "cuando": "2026-10-31T16:54:13.678Z",
+      "error": ""
+     }
+    },
+    {
+     "id": 8227870,
+     "nombre": "PIN · Puntual hoy 13:00 · Juegos más jugados (world steam-now)",
+     "activo": false,
+     "tipo": "once",
+     "proxima": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8227870/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    },
+    {
+     "id": 8227873,
+     "nombre": "PIN · Puntual hoy 21:00 · Vídeos más vistos de YouTube (world yt-views)",
+     "activo": false,
+     "tipo": "once",
+     "proxima": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8227873/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    }
+   ],
+   "workflows": [
+    {
+     "workflow": "Publish post",
+     "ultimo": "failure",
+     "cuando": "2026-10-31T16:54:16Z",
+     "url": "https://github.com/tuamigodelasfinanzas/planet-in-numbers/actions/runs/41221733905",
+     "ejecuciones": 3,
+     "fallidas": 2
+    },
+    {
+     "workflow": "pages build and deployment",
+     "ultimo": "success",
+     "cuando": "2026-10-31T09:57:15Z",
+     "url": "https://github.com/tuamigodelasfinanzas/planet-in-numbers/actions/runs/41190704450",
+     "ejecuciones": 5,
+     "fallidas": 0
+    }
+   ],
+   "programadas_github": [],
+   "ig": {
+    "usuario": "theplanetinnumbers",
+    "avatar": "https://scontent-iad3-2.xx.fbcdn.net/v/t51.82787-15/855967712_17935706646144309_5714598839369986118_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=7d201b&_nc_ohc=wUnGWCbxVR0Q7kNvwH5u9oL&_nc_oc=AdrIki_71clhPvkcsI0w4DEfH0-pTlP0VRM0bAG-e9gdczncZYa2hqOrNSLeAnvdbRo&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=utGL__8AYfsfMvEXhH9AKA&oh=00_AQSyfEXPlOZFB61nQG8fApP77FQSIKZ8i7bPIqVOC459PQ&oe=6AEC1068",
+    "seguidores": 2,
+    "total": 23,
+    "publicaciones": [
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-31T09:55:20+0000",
+      "texto": "The world by income per person 🗺️",
+      "enlace": "https://www.instagram.com/reel/DfJ4gWYggBk/",
+      "miniatura": "https://scontent-iad3-1.cdninstagram.com/v/t51.71878-15/873072175_1470644454978423_1625546133324661831_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=w6_AZpoWnAMQ7kNvwElxsSD&_nc_oc=AdqCyjKF33WHS0rGNN5oGYZK8br1iGcmi-wobrdD9dKoumkBFNXMEHN2JbiHxDZxmgc&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=yNb886y21SlsbHkELvOCDg&_nc_tpa=Q5bMBQIpVZbLP2jEryL8c6JvgTrjk2PbwByxeL5vaQotT6YrlsZq8V2gg010PVyPpzpnlN5wEBFUUOWRNw&oh=00_AQTk6ArPhT5SmJZEvmDd1y3fo8_jcR3PR36r44-_V6GEuQ&oe=6AEBF19A",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 103,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 113
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-30T07:31:43+0000",
+      "texto": "Where are the tallest men in the world? 📏",
+      "enlace": "https://www.instagram.com/reel/DfHDSLllWJ0/",
+      "miniatura": "https://scontent-iad3-1.cdninstagram.com/v/t51.71878-15/879939955_1012241085232893_1681972500211363835_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=LPZeSFbvAtwQ7kNvwHqI8VH&_nc_oc=AdqGztzQAg9baM0LlJIAOy0zAWtCSSMSplvWlYIwyJvlsH6hmUcYmtCq3Bc9fTW0Hhc&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=yNb886y21SlsbHkELvOCDg&_nc_tpa=Q5bMBQKrkfLYhJ9V_s76LzDorqgoot0OP6WdFhvcTg6I3P2ynm-XLnD8xZjGZWaibUWGpYUbzlb5I6-MMA&oh=00_AQRVDS51paULICr6Ds10CxTGuEkxnxCuHw2ZE2L0lpePGg&oe=6AEC064B",
+      "me_gusta": 2,
+      "comentarios": 0,
+      "alcance": 129,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 2,
+      "vistas": 163
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-29T09:56:15+0000",
+      "texto": "What the whole world read this week 👀",
+      "enlace": "https://www.instagram.com/reel/DfEvCPMFCpn/",
+      "miniatura": "https://scontent-iad3-1.cdninstagram.com/v/t51.71878-15/873924226_1384517648078493_8057055493033819331_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=XbOXFPYZwXAQ7kNvwG-8Jm5&_nc_oc=AdqjKylOCfL5oxsq1n6lMZ-Fn9bH426adlC7tPPKD73Oqrbo8cuKsFelr-ocO4-lg-I&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=yNb886y21SlsbHkELvOCDg&_nc_tpa=Q5bMBQJgT5OXen3iqJfzGZnImksmj0uqkFCPmsMUQ1j8hqNzkTZvs3S5CNHdhGVetNP_1iJt8NQzvD0sMg&oh=00_AQSsUAh2NNAHQJnMm0kWBMLqmf9qY7DD9qGuHHmh3HgQSA&oe=6AEC0309",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 110,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 131
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-29T04:56:29+0000",
+      "texto": "The world by life satisfaction 🗺️",
+      "enlace": "https://www.instagram.com/reel/DfEMt9eCO6t/",
+      "miniatura": "https://scontent-iad3-2.cdninstagram.com/v/t51.71878-15/876376607_1788934915650788_8484340249909745683_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=8xPxS6v7WlMQ7kNvwGCBD-l&_nc_oc=AdpZi1W7alyhX4iDVc4H8L6ibekq0JuUs0MhrESp_cGnpI5s9EexCCSzDFb11-sj8Kg&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=yNb886y21SlsbHkELvOCDg&_nc_tpa=Q5bMBQITagJdzkO4EMFIZD9FWjfmWK62wAg0EVYIuLDcw8Qz_jgnRAnEu0BqzFSJMPeg7KZXubnsMbJOPw&oh=00_AQTWYpOg7bpvoFC3cDJDk-AQCih6UhMF6d0QB9YeAvCLWQ&oe=6AEBEFF5",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 111,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 122
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-28T19:58:38+0000",
+      "texto": "The most watched videos in YouTube history ▶️",
+      "enlace": "https://www.instagram.com/reel/DfDPKgqAo_W/",
+      "miniatura": "https://scontent-iad3-2.cdninstagram.com/v/t51.71878-15/873072173_2141811466418601_5324987521998289084_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=p_Y5xWjm9lcQ7kNvwHnsNMt&_nc_oc=AdqGUfAhYWE2_1KDNt93momoyPRq4Xkjp489MRXSj5vpP66-V2c_I0BcTLxORO1-UsY&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=yNb886y21SlsbHkELvOCDg&_nc_tpa=Q5bMBQI7wVmsu16mH5KKYdsNc-ES-AkXT5grEij1rw7x4xuTg6FJF6piFIeJcYPFecgoWRzcwkwmwbIxYw&oh=00_AQTXBaVOS-gb9B4hL-FnVFvUtajgKenpYjIcuq71KqwoJw&oe=6AEBE99C",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 16,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 18
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-28T16:59:43+0000",
+      "texto": "Higher or lower? Country edition ⬆️⬇️",
+      "enlace": "https://www.instagram.com/reel/DfC6piBFWwQ/",
+      "miniatura": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/870245997_1459184172806954_1298212427223559550_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=qQWEa2hGhywQ7kNvwFYj0db&_nc_oc=Adqswr98e--OHQ5KsN0QF9apopOXtcuDfqQBY8jjTdXPmr6CtCLQ0nrvBXj2foBiqAQ&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=yNb886y21SlsbHkELvOCDg&_nc_tpa=Q5bMBQLfeG9Se-7250qS1UB9Mwfs8d9aWwQJvOq0S3umv8WK9MJhH0RHaZ_Ow7fLg88TccMJfEOL_cwRBg&oh=00_AQSKC5ZuSt3U7QIRbU5XDGujRrqioaLWYkZw6dnsdDtPlg&oe=6AEBF031",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 102,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 115
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-28T12:20:33+0000",
+      "texto": "The games the whole world is playing RIGHT NOW 🎮",
+      "enlace": "https://www.instagram.com/reel/DfCavQegf2X/",
+      "miniatura": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/869586322_1129303126263643_7796793608353679348_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=qr6jAAvMTrMQ7kNvwGA7mNu&_nc_oc=Adp0cOiN4GASVPV5UvlMeaFX5iXAuw7GylDgUdZm5YzvKk-FoSLhRMfikLKoO4VY0Bc&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=yNb886y21SlsbHkELvOCDg&_nc_tpa=Q5bMBQLmivzF9Xxe07Q5mP9zLTijiIAcYxa7TRClzWnkesiTiNgD9UpK2wet8RfbcFWy-dDPzhTXSfjxow&oh=00_AQT3HPFEwTybluo4k5j8JtPc9d3mtn7VY9mt3fK1dADcTw&oe=6AEBECB4",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 4,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 4
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-28T04:55:44+0000",
+      "texto": "Biggest economies on Earth: 1980 vs 2025 📈",
+      "enlace": "https://www.instagram.com/reel/DfBn1YBFfFP/",
+      "miniatura": "https://scontent-iad3-2.cdninstagram.com/v/t51.71878-15/866591192_1439535010883430_2606298022583816405_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=Q1fMFpTzIDMQ7kNvwGdy5I-&_nc_oc=Adr1fd1mVvoStuQ5xlZeb-UGH_FsYQYpDeJi8ibr6Bcn82ZkeYl9V8KwhKzJRPP3798&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=yNb886y21SlsbHkELvOCDg&_nc_tpa=Q5bMBQLNc7-6iGC_4OpwsKaIsjrhCj9QTe_-2aC_U9u7MOlijC7gqhp_nfQPo3jQs-aqGIUQV_iQmCJXRw&oh=00_AQQqlrdgMJ0d_oEOV9GpJhkVcIlysFJC_tvVBVkQvkDblw&oe=6AEBE66B",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 109,
+      "guardados": 0,
+      "compartidos": 1,
+      "interacciones": 1,
+      "vistas": 117
+     },
+     {
+      "tipo": "Carrusel",
+      "fecha": "2026-10-27T10:38:57+0000",
+      "texto": "Biggest spirits drinkers: the full Top 20 🌍",
+      "enlace": "https://www.instagram.com/p/De_qXHQDhH8/",
+      "miniatura": "https://scontent-iad3-1.cdninstagram.com/v/t51.71878-15/867380406_2183099329252186_3415804453619593716_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=GaIhkuHOTs4Q7kNvwHc7tPZ&_nc_oc=AdqmNzRf4J6ZYl4N73EmIIqEVYOwOGaUJeP1SitZ2DC2AAFqOtpgK2xdA2CUGZR_WTY&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=yNb886y21SlsbHkELvOCDg&oh=00_AQSVoELkYk1Jv9Xh8iCvr5DA4qKjYCAEii5gqnqPG8Sg3A&oe=6AEBFEFC",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 1,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 4
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-27T04:56:03+0000",
+      "texto": "Where $100 goes the furthest 💵",
+      "enlace": "https://www.instagram.com/reel/De_DE1vkRKI/",
+      "miniatura": "https://scontent-iad3-2.cdninstagram.com/v/t51.71878-15/871842395_2207062973526156_5730898967363870516_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=U2emToblOhEQ7kNvwGmFwc7&_nc_oc=Adp7sVfwpckreCeOoskmv7F3p-PwJdW1u5TDltK_dTOtAGXmrHeljmnOq3w6w8LnWxk&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=yNb886y21SlsbHkELvOCDg&_nc_tpa=Q5bMBQKwXXCvuims-NqAv_IcfEav-Q2zoqZQ5TfAcIZhrHSk2gfQ4fP9EfJYCb1KdKV4dDI3mFQ1A_H6sw&oh=00_AQTb-dgRtJZuSC1b3LGf5wkSs8JCxLn7oTeBZURJNTU4aA&oe=6AEC151C",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 129,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 144
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-26T16:55:12+0000",
+      "texto": "Stop the video: this is where you retire 🏖️",
+      "enlace": "https://www.instagram.com/reel/De9wk_tD1jD/",
+      "miniatura": "https://scontent-iad3-2.cdninstagram.com/v/t51.71878-15/868442809_1815362589490809_4302462587497460929_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=g6TP8W9KPI8Q7kNvwHiLcT0&_nc_oc=AdoLHeErWLQFRni3xy2rWBqI_rCmhJGxlA-cTLSqe3SnLa8y-XZhuFofiuQiVWYaPIc&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=yNb886y21SlsbHkELvOCDg&_nc_tpa=Q5bMBQJfV7hjuVnLc1bDYwpOsq1FrRi5kbM6cRVqlZm_fQ5oT42T-1IMBoUsgK64uPZ5TW7__dP6M-1pPQ&oh=00_AQRYGBcAhhoo8j3pTwNOP8pRXYwHbm9ESukw64ks1g8qTg&oe=6AEC0892",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 69,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 95
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-26T04:55:50+0000",
+      "texto": "The 10 poorest countries in the world",
+      "enlace": "https://www.instagram.com/reel/De8eQPblU9w/",
+      "miniatura": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/865307448_1156539610168024_3930970183955963720_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=HU2Jykk8F50Q7kNvwH0wMuK&_nc_oc=AdoeLlzYwyG0I-1HLYQvBjES0CBmJ0jYiNjv0Ss5YovUcSd4gSg3fAmqoDMqOW2pRNU&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=yNb886y21SlsbHkELvOCDg&_nc_tpa=Q5bMBQJRxImBiMmFDA9mm4vlF2c8Tl2ehlkRXyy6R4a8OjWeKBQntxghjgSO10v7aV8YexmaF38KbdfqRQ&oh=00_AQRUlYrfFujDd4jr_sDlOwhwe0-4gNo6jXyw7dz68UisdA&oe=6AEC05B9",
+      "me_gusta": 2,
+      "comentarios": 0,
+      "alcance": 124,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 2,
+      "vistas": 136
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-24T15:55:34+0000",
+      "texto": "🏆 Best country to live in · QUARTER-FINAL",
+      "enlace": "https://www.instagram.com/reel/De4gKhFCeTO/",
+      "miniatura": "https://scontent-iad3-1.cdninstagram.com/v/t51.71878-15/859934254_39439660019015917_1546099276592524565_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=Je-wS00N4BAQ7kNvwHtaz9W&_nc_oc=Adq8DjMiLQ8dOOwuKOBXaO_mASh8A9ZAIbH-fdUNx1eOruUXl_jdebQGVZcv-atAkW4&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=yNb886y21SlsbHkELvOCDg&_nc_tpa=Q5bMBQIDD5U7qS5QRkIL2-sV7Rx9PNEzlBnakEgzEHIOs6-iztEvFcBLfCL-w-b7tsNlVY-_kqq8RugXTQ&oh=00_AQRY6TfJDIfYuGRgXd-b5Wbr9KJL9SFXJn53bP4A0fnvlQ&oe=6AEBF872",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 101,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 105
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-24T08:55:30+0000",
+      "texto": "Guess the country 🌍❓",
+      "enlace": "https://www.instagram.com/reel/De3wFlHigeC/",
+      "miniatura": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/865096670_1492447402939405_2793013550987713020_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=GJd6DczQU30Q7kNvwG4ZcWp&_nc_oc=Adq-9f4uYxrDohv1_M6u5rTYZLr8cZ4SexlFLYePud8VZ31d6zJi3b_acuCySTxr3xw&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=yNb886y21SlsbHkELvOCDg&_nc_tpa=Q5bMBQL70HHiMeoXtUMfaIupEp2kRFcbK3JYwLc08oLmkPni52rYqqbc1OBWLor41sZ2zT6dyMhNM2AyDw&oh=00_AQQLgXe-oP7aQX1382echMYvSZWYsdSKM-9pWheNeMRmyw&oe=6AEBF1C1",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 112,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 125
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-23T16:03:28+0000",
+      "texto": "Stop the video to see where you'll live 🏠",
+      "enlace": "https://www.instagram.com/reel/De18RDZDZIT/",
+      "miniatura": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/861786141_1838183960663850_2169804114379530871_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=bLf-SRSJ00AQ7kNvwHYZf3g&_nc_oc=AdrLo-z1aRe1kwFHemb5rEkj6kj7nFwmjbtDN-738URJr23Vqzv45yUcouCHdurbgeg&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=yNb886y21SlsbHkELvOCDg&_nc_tpa=Q5bMBQK12SrYG9r2lovVPXr7D9aBMBJflBohI0O5T9Iw-jHO0dF4ZYssTWs3MpqApFfsmyP4lZ3pRv1vww&oh=00_AQSeziKfh_hnFKEPuK4AsdTKARF7_SCBRMhkgNC9pKOKrw&oe=6AEBF97E",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 110,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 143
+     }
+    ],
+    "leido": "2026-10-31T18:01:16Z",
+    "token_caduca": null,
+    "permisos": [
+     "pages_show_list",
+     "business_management",
+     "instagram_basic",
+     "instagram_manage_comments",
+     "instagram_manage_insights",
+     "instagram_content_publish",
+     "instagram_manage_messages",
+     "pages_read_engagement",
+     "instagram_manage_contents",
+     "public_profile"
+    ],
+    "error_metricas": ""
+   },
+   "publicados": [
+    {
+     "nombre": "Publish post",
+     "cuando": "2026-10-31T16:54:16Z",
+     "origen": "GitHub",
+     "estado": "error",
+     "error": "El workflow de GitHub Actions terminó con error (ábrelo para ver el paso que falló)",
+     "enlace": "https://github.com/tuamigodelasfinanzas/planet-in-numbers/actions/runs/41221733905",
+     "post": null
+    },
+    {
+     "nombre": "PIN · Publicar (Instagram + Facebook + YouTube)",
+     "cuando": "2026-10-31T16:54:13.678Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8088028/edit"
+    },
+    {
+     "nombre": "PIN · Publicar (Instagram + Facebook + YouTube)",
+     "cuando": "2026-10-31T16:53:03.200Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8088028/edit"
+    },
+    {
+     "nombre": "PIN · Publicar (Instagram + Facebook + YouTube)",
+     "cuando": "2026-10-31T16:53:02.530Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8088028/edit"
+    },
+    {
+     "nombre": "PIN · Publicar (Instagram + Facebook + YouTube)",
+     "cuando": "2026-10-31T16:53:01.704Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8088028/edit"
+    },
+    {
+     "nombre": "PIN · Franja C 18:00 (L-X-V juegos/reels + S Mundial)",
+     "cuando": "2026-10-31T16:52:03.614Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8087818/edit"
+    },
+    {
+     "nombre": "Publish post",
+     "cuando": "2026-10-31T09:57:51Z",
+     "origen": "GitHub",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://github.com/tuamigodelasfinanzas/planet-in-numbers/actions/runs/41190421738",
+     "post": null,
+     "instagram": "https://www.instagram.com/reel/DfJ4gWYggBk/"
+    },
+    {
+     "nombre": "PIN · Publicar (Instagram + Facebook + YouTube)",
+     "cuando": "2026-10-31T09:54:44.895Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8088028/edit",
+     "instagram": "https://www.instagram.com/reel/DfJ4gWYggBk/"
+    },
+    {
+     "nombre": "PIN · Franja B 11:00 (carruseles M-J-D y quiz S)",
+     "cuando": "2026-10-31T09:52:04.366Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8087814/edit",
+     "instagram": "https://www.instagram.com/reel/DfJ4gWYggBk/"
+    },
+    {
+     "nombre": "Publish post",
+     "cuando": "2026-10-30T16:55:00Z",
+     "origen": "GitHub",
+     "estado": "error",
+     "error": "Falló, pero el post salió después con otra publicación (recuperado)",
+     "enlace": "https://github.com/tuamigodelasfinanzas/planet-in-numbers/actions/runs/41093741858",
+     "post": null
+    },
+    {
+     "nombre": "PIN · Publicar (Instagram + Facebook + YouTube)",
+     "cuando": "2026-10-30T16:54:58.105Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8088028/edit"
+    },
+    {
+     "nombre": "PIN · Publicar (Instagram + Facebook + YouTube)",
+     "cuando": "2026-10-30T16:54:56.914Z",
+     "origen": "Make",
+     "estado": "error",
+     "error": "Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons. (190, OAuthException)",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8088028/edit"
+    },
+    {
+     "nombre": "PIN · Franja C 18:00 (L-X-V juegos/reels + S Mundial)",
+     "cuando": "2026-10-30T16:52:02.255Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8087818/edit"
+    },
+    {
+     "nombre": "PIN · Publicar (Instagram + Facebook + YouTube)",
+     "cuando": "2026-10-30T07:30:56.828Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8088028/edit",
+     "instagram": "https://www.instagram.com/reel/DfHDSLllWJ0/"
+    }
+   ]
+  },
+  {
+   "id": "mayores",
+   "nombre": "Cosas de Mayores",
+   "emoji": "🧒",
+   "instagram": "noentiendoalosmayores",
+   "repo": "tuamigodelasfinanzas/No-Entiendo-a-los-Mayores",
+   "carpeta_make": 408847,
+   "semaforo": "verde",
+   "make": {
+    "total": 1,
+    "activos": 1,
+    "ejecuciones_36h": 6,
+    "fallos_36h": 0,
+    "recuperados_36h": 0
+   },
+   "github": {
+    "workflows": 2,
+    "ejecuciones_36h": 12,
+    "fallidas_36h": 0
+   },
+   "proximas": [
+    {
+     "nombre": "Reel B · Cuando sea mayor me compraré una casa con piscina",
+     "cuando": "2026-10-31T19:30:00Z"
+    },
+    {
+     "nombre": "Reel A · Si no tienes dinero, ¿por qué lo compras?",
+     "cuando": "2026-11-01T12:30:00Z"
+    },
+    {
+     "nombre": "Reel B · Manual para ser adulto: la entrevista de trabajo",
+     "cuando": "2026-11-01T19:30:00Z"
+    },
+    {
+     "nombre": "Reel A · ¿Por qué compran cosas que no necesitan?",
+     "cuando": "2026-11-02T12:30:00Z"
+    },
+    {
+     "nombre": "Reel B · ¿Quién inventó las contraseñas?",
+     "cuando": "2026-11-02T19:30:00Z"
+    }
+   ],
+   "incidencias": [],
+   "escenarios": [
+    {
+     "id": 8198164,
+     "nombre": "No Entiendo a los Mayores · Publicar",
+     "activo": true,
+     "tipo": "immediately",
+     "proxima": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8198164/edit",
+     "ejecuciones": 6,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": {
+      "estado": "ok",
+      "cuando": "2026-10-31T12:30:29.846Z",
+      "error": ""
+     }
+    }
+   ],
+   "workflows": [
+    {
+     "workflow": "Publish",
+     "ultimo": "success",
+     "cuando": "2026-10-31T12:30:36Z",
+     "url": "https://github.com/tuamigodelasfinanzas/No-Entiendo-a-los-Mayores/actions/runs/41200499769",
+     "ejecuciones": 6,
+     "fallidas": 0
+    },
+    {
+     "workflow": "pages build and deployment",
+     "ultimo": "success",
+     "cuando": "2026-10-31T12:32:20Z",
+     "url": "https://github.com/tuamigodelasfinanzas/No-Entiendo-a-los-Mayores/actions/runs/41201414290",
+     "ejecuciones": 6,
+     "fallidas": 0
+    }
+   ],
+   "programadas_github": [
+    {
+     "nombre": "Reel B · Cuando sea mayor me compraré una casa con piscina",
+     "cuando": "2026-10-31T19:30:00Z",
+     "origen": "github",
+     "activo": true,
+     "enlace": "https://github.com/tuamigodelasfinanzas/No-Entiendo-a-los-Mayores/actions/workflows/publish.yml"
+    },
+    {
+     "nombre": "Reel A · Si no tienes dinero, ¿por qué lo compras?",
+     "cuando": "2026-11-01T12:30:00Z",
+     "origen": "github",
+     "activo": true,
+     "enlace": "https://github.com/tuamigodelasfinanzas/No-Entiendo-a-los-Mayores/actions/workflows/publish.yml"
+    },
+    {
+     "nombre": "Reel B · Manual para ser adulto: la entrevista de trabajo",
+     "cuando": "2026-11-01T19:30:00Z",
+     "origen": "github",
+     "activo": true,
+     "enlace": "https://github.com/tuamigodelasfinanzas/No-Entiendo-a-los-Mayores/actions/workflows/publish.yml"
+    },
+    {
+     "nombre": "Reel A · ¿Por qué compran cosas que no necesitan?",
+     "cuando": "2026-11-02T12:30:00Z",
+     "origen": "github",
+     "activo": true,
+     "enlace": "https://github.com/tuamigodelasfinanzas/No-Entiendo-a-los-Mayores/actions/workflows/publish.yml"
+    },
+    {
+     "nombre": "Reel B · ¿Quién inventó las contraseñas?",
+     "cuando": "2026-11-02T19:30:00Z",
+     "origen": "github",
+     "activo": true,
+     "enlace": "https://github.com/tuamigodelasfinanzas/No-Entiendo-a-los-Mayores/actions/workflows/publish.yml"
+    }
+   ],
+   "ig": {
+    "usuario": "noentiendoalosmayores",
+    "avatar": "https://scontent-iad3-2.xx.fbcdn.net/v/t51.82787-15/862543558_17895318612454006_5235419505443751175_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=7d201b&_nc_ohc=S-fi7qh0MtwQ7kNvwFqvKVz&_nc_oc=AdpuJz-iQnOAjFzBUzMAu-F8psYP0bkfKFrZhEOBI122m8oDOA9LWTd_V4vYBkNZ8FA&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=ADLBy0DdfiNvyQeQuBtvxg&oh=00_AQThQeRk_gVnktrosUI6grlKkaWOP_3bPN3O1rWJ3nUjFg&oe=6AEBEF1E",
+    "seguidores": 0,
+    "total": 10,
+    "publicaciones": [
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-31T12:31:04+0000",
+      "texto": "¿Quién inventó los lunes?",
+      "enlace": "https://www.instagram.com/reel/DfKKVYOjdze/",
+      "miniatura": "https://scontent-iad3-2.cdninstagram.com/v/t51.71878-15/876395977_1131856049578809_6854169802965661957_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=VB5-vAeMMzgQ7kNvwFrScBy&_nc_oc=Adojh664Jq9w6zoBhzHLB7ZI1befPOP_ADj1qDgY39Eeh-dYiE8vl8n1D-20bu4LqFM&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=m2rGL97WIOMXOzzVKu-ttw&_nc_tpa=Q5bMBQJAtLj2SXpZOCNaeChxGbIenPO1bGMEOzksltOJTCB8tqAgss-IT5j5jnB9IUNqytdwKc0t_KfSPQ&oh=00_AQRCi7B8YpEyO2DhyuQ-KylXMmFWraWp3l85QlytdFee5w&oe=6AEBFCBA",
+      "me_gusta": 30,
+      "comentarios": 2,
+      "alcance": 1145,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 33,
+      "vistas": 1504
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-30T19:30:36+0000",
+      "texto": "¿Qué son las cookies?",
+      "enlace": "https://www.instagram.com/reel/DfIVi5Sk1Wj/",
+      "miniatura": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/867592257_1475559338105430_2231889544502328322_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=BmB6fq4N9TMQ7kNvwE8DRKo&_nc_oc=AdrVWcDENWW9_jeV1BwpnSbxeR4wY-XcGYAZYQ7au3ZnZB_7XCHomOWnWEtdx9wwJMY&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=m2rGL97WIOMXOzzVKu-ttw&_nc_tpa=Q5bMBQIaCcHSNEd5IpNlmbUz7a2tdmQrgQmK7e-xT0a5d5nd5wMKczYqmH1XIW8XlLAAcNcGd1jwY_EdxQ&oh=00_AQS2_RaGUb0zc0Q51ngJlV7rWImJAOlrTRqOi-KsMbOfqQ&oe=6AEBF8D5",
+      "me_gusta": 27,
+      "comentarios": 0,
+      "alcance": 1133,
+      "guardados": 0,
+      "compartidos": 2,
+      "interacciones": 29,
+      "vistas": 1432
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-30T11:30:18+0000",
+      "texto": "¿Por qué pagan un gimnasio y luego no van?",
+      "enlace": "https://www.instagram.com/reel/DfHelBijB06/",
+      "miniatura": "https://scontent-iad3-2.cdninstagram.com/v/t51.71878-15/877621613_1782979892932615_4645856746815556039_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=xxySthCN2toQ7kNvwE_w71N&_nc_oc=AdqY5_urhcKGkyLKeyLzBOyTncswfyGD0NKr7XlnOyz9rD7SVaDzsm2Ljn_yOTWGOKg&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=m2rGL97WIOMXOzzVKu-ttw&_nc_tpa=Q5bMBQLTw2bJwKW8rCfkZXsVvVMjE1njr6-AW47qwLzsS_87056to_u27AikUtOqak0ME1RpQ1yKcMTkpw&oh=00_AQSlWU5AdEIZ7tH9PXbPwA3OhX_uVr2vuDq9NHOzf046YQ&oe=6AEBFD0A",
+      "me_gusta": 2,
+      "comentarios": 0,
+      "alcance": 202,
+      "guardados": 0,
+      "compartidos": 2,
+      "interacciones": 4,
+      "vistas": 240
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-29T19:31:29+0000",
+      "texto": "La inflación, explicada como si tuvieras ocho años",
+      "enlace": "https://www.instagram.com/reel/DfFw3JuDlev/",
+      "miniatura": "https://scontent-iad3-2.cdninstagram.com/v/t51.71878-15/878870619_1802841664261919_4721885868322297172_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=A4S3EEwnaQIQ7kNvwFmqrhD&_nc_oc=AdpQbEcVNXCrNe8GrpWpry1RFNiKoL_53ZjdFD3ElktGJgynknoVybTXiJeR15s_tl8&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=m2rGL97WIOMXOzzVKu-ttw&_nc_tpa=Q5bMBQKab9GTwr2jsou8_WPxbWgn94lh7AsbjMmwioa6hAHMXg0bh_J0NDSflEjvESaU8rhYOXEwxCvwgQ&oh=00_AQTQuv0PhoO1O75m9flgRmDsAQ3YIIJ5xKT9la7CoEQ0yQ&oe=6AEC1090",
+      "me_gusta": 12,
+      "comentarios": 0,
+      "alcance": 811,
+      "guardados": 1,
+      "compartidos": 0,
+      "interacciones": 13,
+      "vistas": 1001
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-29T12:30:36+0000",
+      "texto": "Manual para ser adulto: cómo (no) quedar con un amigo",
+      "enlace": "https://www.instagram.com/reel/DfFArucEdsx/",
+      "miniatura": "https://scontent-iad3-2.cdninstagram.com/v/t51.71878-15/868935210_1590683012379561_20889275253926658_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=wiRCyyjyu2EQ7kNvwGEpKno&_nc_oc=AdqGZztg5kVCYpSRnWTD8t8y0aIMsnKD9nTGiWlMygR20gmbvm_F3N55Xb8Ui5DZqrU&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=m2rGL97WIOMXOzzVKu-ttw&_nc_tpa=Q5bMBQI5cFMC4e6Y8yKpGjUKUgKmYcdoa3hsv0HJjwXCSaGR7pqawRXAxNYFw3dWKhFIGMS3cd8TTf0Jgg&oh=00_AQRnHbwxJ9uhba4RXKwlZOwZRc6GSXA-Aj_dK0jLqqyWsw&oe=6AEC0A31",
+      "me_gusta": 5,
+      "comentarios": 0,
+      "alcance": 174,
+      "guardados": 1,
+      "compartidos": 0,
+      "interacciones": 7,
+      "vistas": 209
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-28T19:30:45+0000",
+      "texto": "Cuando sea mayor ganaré 2.000 euros... ¿brutos?",
+      "enlace": "https://www.instagram.com/reel/DfDL-pXk2Wf/",
+      "miniatura": "https://scontent-iad3-1.cdninstagram.com/v/t51.71878-15/870801846_1156733660117524_2365080919978073122_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=oX3ygc0_DAAQ7kNvwECsX_W&_nc_oc=AdrUyCJK3pPRvi2lmEMZUwQnl0BosQNJ9xAiAFylHIcR2BR9mxBkDnNuUfBx5ikfhEw&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=m2rGL97WIOMXOzzVKu-ttw&_nc_tpa=Q5bMBQLbFplVwPuYfYWuudZ4Af105FDssaKD3qVI3V7-tq-b_-a9tKmqn3PlCppak7rGAYQZPiJCNEYyqg&oh=00_AQTpcB2hAIb_FwkeeLblBcar4Ue_SpaVPCZx0lUWRCovvg&oe=6AEBF177",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 195,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 238
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-28T12:30:40+0000",
+      "texto": "¿Quién inventó las reuniones?",
+      "enlace": "https://www.instagram.com/reel/DfCb43uESQU/",
+      "miniatura": "https://scontent-iad3-2.cdninstagram.com/v/t51.71878-15/870097009_2175258283349196_895771746682640878_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=MpA3tLjFj8QQ7kNvwEEMvZ1&_nc_oc=AdqrvK5gLK6cPxoSbw2AwoPC2uTVa98VekiUYBoOTRFRt1UqYrWR55j-TybciMNsXXA&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=m2rGL97WIOMXOzzVKu-ttw&_nc_tpa=Q5bMBQJqjL-5c2q4_pXf-g3LDwwz3WibfoNP8pKXelwN8F2LfrhWu3i0rgwtIuK0OmbABp9KDAdigxyDuQ&oh=00_AQQlHEEFE4HFxULY5SAL3O040rOZB48grkUeJC1CIxg0oQ&oe=6AEC1550",
+      "me_gusta": 1,
+      "comentarios": 0,
+      "alcance": 222,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 1,
+      "vistas": 251
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-27T20:29:21+0000",
+      "texto": "¿Qué es una hipoteca?",
+      "enlace": "https://www.instagram.com/reel/DfAt4SVCAYB/",
+      "miniatura": "https://scontent-iad3-1.cdninstagram.com/v/t51.71878-15/869628221_1658848059228141_3810612014597470340_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=gBV0GaE4fB8Q7kNvwFt7Pta&_nc_oc=AdodDWstwoEBUyDuslgeeHItb-ZPwz6TaOgq81a65l81AOGEKXyTMIGKT700ZFGxKNw&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=m2rGL97WIOMXOzzVKu-ttw&_nc_tpa=Q5bMBQKEsVh7LzWo5KEsJwymGIBECPmiEpcwP4NlLWtv0uwQHH1m3CeW3phrD18WAILqGjjV7MQR_nUOnw&oh=00_AQS7ddorux2kqrl45fb_IxQ3drga8tjQlTUQLJ5ALq1ffg&oe=6AEBEAA8",
+      "me_gusta": 1,
+      "comentarios": 0,
+      "alcance": 167,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 1,
+      "vistas": 196
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-27T18:57:30+0000",
+      "texto": "¿Por qué los mayores dicen que no tienen tiempo?",
+      "enlace": "https://www.instagram.com/reel/DfAjXOOgDE9/",
+      "miniatura": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/867793018_1847933839720126_3778124219343752028_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=1XyIu-NU1NIQ7kNvwEemNm_&_nc_oc=Adq6uY7pZePJiBGB3U4vxZWMMESy1C-7Q8kFr0NNoLVCwSqC4T3wYr5Egi6Xuw8deAc&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=m2rGL97WIOMXOzzVKu-ttw&_nc_tpa=Q5bMBQLbEVJ9g6RgOTWBgGzIQOuE16a4PCWn83rujmOacks4B3pFTR9_X4zhpYBOnWnahel44yxUDja68Q&oh=00_AQTgOhaB6qxYA01oIa8_FiWaeJuaTZuYH7IqkjR5hZoCMA&oe=6AEBE8EF",
+      "me_gusta": 3,
+      "comentarios": 0,
+      "alcance": 212,
+      "guardados": 1,
+      "compartidos": 0,
+      "interacciones": 4,
+      "vistas": 284
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-27T15:18:28+0000",
+      "texto": "Dos niños. Un montón de preguntas sobre el mundo de los mayores. 👦👦",
+      "enlace": "https://www.instagram.com/reel/DfAKRyajLh9/",
+      "miniatura": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/865463150_978551651417376_2720567341089483861_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=CR7HEkhRUPUQ7kNvwHZz5X7&_nc_oc=Adp5H7BJwIYWoXiDFzeIfzXgdUYtTjKobYCch1NxuSuI8yCf_-mq20mmposbnlBz5QU&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=m2rGL97WIOMXOzzVKu-ttw&_nc_tpa=Q5bMBQJES1_hGproAXQWnlnNVr89ZVFeRCq2Q1IOG1Co8ZxUMEgyfhOlgsnr1mQVInUOUGJ56dLOzR5Vuw&oh=00_AQTHUcamOzKkG-idAvqsqhZwnINO7KIBVjDM62yv-3qupA&oe=6AEBE524",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 102,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 112
+     }
+    ],
+    "leido": "2026-10-31T18:01:27Z",
+    "token_caduca": null,
+    "permisos": [
+     "pages_show_list",
+     "business_management",
+     "instagram_basic",
+     "instagram_manage_comments",
+     "instagram_manage_insights",
+     "instagram_content_publish",
+     "instagram_manage_messages",
+     "pages_read_engagement",
+     "instagram_manage_contents",
+     "public_profile"
+    ],
+    "error_metricas": ""
+   },
+   "publicados": [
+    {
+     "nombre": "Publish",
+     "cuando": "2026-10-31T12:30:36Z",
+     "origen": "GitHub",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://github.com/tuamigodelasfinanzas/No-Entiendo-a-los-Mayores/actions/runs/41200499769",
+     "post": "¿Quién inventó los lunes?",
+     "instagram": "https://www.instagram.com/reel/DfKKVYOjdze/"
+    },
+    {
+     "nombre": "No Entiendo a los Mayores · Publicar",
+     "cuando": "2026-10-31T12:30:29.846Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8198164/edit",
+     "instagram": "https://www.instagram.com/reel/DfKKVYOjdze/",
+     "post": "¿Quién inventó los lunes?"
+    },
+    {
+     "nombre": "No Entiendo a los Mayores · Publicar",
+     "cuando": "2026-10-31T12:30:09.346Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8198164/edit",
+     "instagram": "https://www.instagram.com/reel/DfKKVYOjdze/",
+     "post": "¿Quién inventó los lunes?"
+    },
+    {
+     "nombre": "Publish",
+     "cuando": "2026-10-31T11:18:05Z",
+     "origen": "GitHub",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://github.com/tuamigodelasfinanzas/No-Entiendo-a-los-Mayores/actions/runs/41196268524",
+     "post": "¿Quién inventó los lunes?"
+    },
+    {
+     "nombre": "Publish",
+     "cuando": "2026-10-30T19:30:37Z",
+     "origen": "GitHub",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://github.com/tuamigodelasfinanzas/No-Entiendo-a-los-Mayores/actions/runs/41115487569",
+     "post": "¿Qué son las cookies?",
+     "instagram": "https://www.instagram.com/reel/DfIVi5Sk1Wj/"
+    },
+    {
+     "nombre": "Publish",
+     "cuando": "2026-10-30T19:30:28Z",
+     "origen": "GitHub",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://github.com/tuamigodelasfinanzas/No-Entiendo-a-los-Mayores/actions/runs/41106149010",
+     "post": "¿Qué son las cookies?",
+     "instagram": "https://www.instagram.com/reel/DfIVi5Sk1Wj/"
+    },
+    {
+     "nombre": "No Entiendo a los Mayores · Publicar",
+     "cuando": "2026-10-30T19:30:20.990Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8198164/edit",
+     "instagram": "https://www.instagram.com/reel/DfIVi5Sk1Wj/",
+     "post": "¿Qué son las cookies?"
+    },
+    {
+     "nombre": "No Entiendo a los Mayores · Publicar",
+     "cuando": "2026-10-30T19:30:00.484Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8198164/edit",
+     "instagram": "https://www.instagram.com/reel/DfIVi5Sk1Wj/",
+     "post": "¿Qué son las cookies?"
+    },
+    {
+     "nombre": "Publish",
+     "cuando": "2026-10-30T12:22:54Z",
+     "origen": "GitHub",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://github.com/tuamigodelasfinanzas/No-Entiendo-a-los-Mayores/actions/runs/41054819326",
+     "post": "¿Por qué pagan un gimnasio y luego no van?"
+    },
+    {
+     "nombre": "Publish",
+     "cuando": "2026-10-30T11:30:11Z",
+     "origen": "GitHub",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://github.com/tuamigodelasfinanzas/No-Entiendo-a-los-Mayores/actions/runs/41047450996",
+     "post": "¿Por qué pagan un gimnasio y luego no van?",
+     "instagram": "https://www.instagram.com/reel/DfHelBijB06/"
+    },
+    {
+     "nombre": "No Entiendo a los Mayores · Publicar",
+     "cuando": "2026-10-30T11:30:04.303Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8198164/edit",
+     "instagram": "https://www.instagram.com/reel/DfHelBijB06/",
+     "post": "¿Por qué pagan un gimnasio y luego no van?"
+    },
+    {
+     "nombre": "No Entiendo a los Mayores · Publicar",
+     "cuando": "2026-10-30T11:29:43.727Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8198164/edit",
+     "instagram": "https://www.instagram.com/reel/DfHelBijB06/",
+     "post": "¿Por qué pagan un gimnasio y luego no van?"
+    }
+   ]
+  },
+  {
+   "id": "zero",
+   "nombre": "Zero Understands",
+   "emoji": "🤖",
+   "instagram": "zerounderstands",
+   "repo": "tuamigodelasfinanzas/zero-understands",
+   "carpeta_make": 408147,
+   "semaforo": "verde",
+   "make": {
+    "total": 3,
+    "activos": 3,
+    "ejecuciones_36h": 3,
+    "fallos_36h": 0,
+    "recuperados_36h": 0
+   },
+   "github": {
+    "workflows": 1,
+    "ejecuciones_36h": 2,
+    "fallidas_36h": 0
+   },
+   "proximas": [
+    {
+     "nombre": "ZERO · Subir a YouTube programado (diario 17:00, privado hasta el día siguiente)",
+     "cuando": "2026-11-01T16:00:00.000Z"
+    },
+    {
+     "nombre": "ZERO · Reel en Instagram (diario 18:00, Shorts del día)",
+     "cuando": "2026-11-01T17:00:00.000Z"
+    }
+   ],
+   "incidencias": [],
+   "escenarios": [
+    {
+     "id": 8108361,
+     "nombre": "ZERO · Subir a YouTube programado (diario 17:00, privado hasta el día siguiente)",
+     "activo": true,
+     "tipo": "daily",
+     "proxima": "2026-11-01T16:00:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8108361/edit",
+     "ejecuciones": 2,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": {
+      "estado": "ok",
+      "cuando": "2026-10-31T16:00:15.981Z",
+      "error": ""
+     }
+    },
+    {
+     "id": 8229616,
+     "nombre": "ZERO · Reel en Instagram (diario 18:00, Shorts del día)",
+     "activo": true,
+     "tipo": "daily",
+     "proxima": "2026-11-01T17:00:00.000Z",
+     "enlace": "https://eu1.make.com/8964207/scenarios/8229616/edit",
+     "ejecuciones": 1,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": {
+      "estado": "ok",
+      "cuando": "2026-10-31T17:00:17.021Z",
+      "error": ""
+     }
+    },
+    {
+     "id": 8113736,
+     "nombre": "ZERO · Publicar ya (manual, público)",
+     "activo": true,
+     "tipo": "on-demand",
+     "proxima": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8113736/edit",
+     "ejecuciones": 0,
+     "fallos": 0,
+     "recuperados": 0,
+     "ultimo": null
+    }
+   ],
+   "workflows": [
+    {
+     "workflow": "Render",
+     "ultimo": "success",
+     "cuando": "2026-10-31T09:31:04Z",
+     "url": "https://github.com/tuamigodelasfinanzas/zero-understands/actions/runs/41188917934",
+     "ejecuciones": 2,
+     "fallidas": 0
+    }
+   ],
+   "programadas_github": [],
+   "ig": {
+    "usuario": "zerounderstands",
+    "avatar": "https://scontent-iad3-2.xx.fbcdn.net/v/t51.82787-15/863324912_18143323885568168_2580448513169334953_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=7d201b&_nc_ohc=BUjnA_htBEAQ7kNvwFnedbc&_nc_oc=Adqmlscx0PHxEwNKDm7GBy5-DFpMWTHUMxAaycHjIsQI265imEQBMaSWDERsSN9syDE&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AJ-jyNUEAAAA&_nc_gid=1K-RVhBdXXLz7MeonrEnvw&oh=00_AQQ025e6KCogfdjNnk53hU8awuWS3FRQxNFdYtvkVtV3eQ&oe=6AEBEE9D",
+    "seguidores": 0,
+    "total": 2,
+    "publicaciones": [
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-31T17:00:52+0000",
+      "texto": "Who really gets the credit card rewards",
+      "enlace": "https://www.instagram.com/reel/DfKpM7bDrAw/",
+      "miniatura": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/881184075_974526518570353_3770804734488039217_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=scc0qTz4SCgQ7kNvwFBr8bj&_nc_oc=AdrwBbSyNg7dN9TPDfV2oxhV4q-zbj34BkSW7c6WHVy0q70fhaW6cdVFRplD_OGPlx0&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=JwOA6vhTSk1zzlEfymxcJw&_nc_tpa=Q5bMBQJd6V2M22qbSERJ2sTGRmve53rx5uffqslLcg7U16b8n0CXshmkJ1CGHVMLapwfd_z9Qv1ts5r2vA&oh=00_AQQAOhkqL-q6LwMe4zdMFQR71wQixl_DsmK0jo3tvj9gAg&oe=6AEC0795",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 0,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 0
+     },
+     {
+      "tipo": "Reel",
+      "fecha": "2026-10-29T17:01:50+0000",
+      "texto": "The cash back on your coffee lasts 17 days",
+      "enlace": "https://www.instagram.com/reel/DfFfvdgka_d/",
+      "miniatura": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/878367209_1143646398061816_1372517438810812913_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=MNnes344kggQ7kNvwGEZQvN&_nc_oc=Adq3BYuf15nkPDtQieqnfS5hbB6wAYyuy1ZcB1AibGmiUSa9go7pUZWAZ19lEbIpkYQ&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=JwOA6vhTSk1zzlEfymxcJw&_nc_tpa=Q5bMBQIvHNqhMoWhSDIdZIzKte9Dn6aKpklAmaFNv73P7zopl8t35XQim29itrmGxQs-SqpSQsDJc8xNUg&oh=00_AQTmUjuy5GZB5cwsGbqotiwluXfgMG71a2ds8c2YxXTmJA&oe=6AEBFE82",
+      "me_gusta": 0,
+      "comentarios": 0,
+      "alcance": 127,
+      "guardados": 0,
+      "compartidos": 0,
+      "interacciones": 0,
+      "vistas": 166
+     }
+    ],
+    "leido": "2026-10-31T18:01:31Z",
+    "token_caduca": null,
+    "permisos": [
+     "pages_show_list",
+     "business_management",
+     "instagram_basic",
+     "instagram_manage_comments",
+     "instagram_manage_insights",
+     "instagram_content_publish",
+     "instagram_manage_messages",
+     "pages_read_engagement",
+     "instagram_manage_contents",
+     "public_profile"
+    ],
+    "error_metricas": ""
+   },
+   "publicados": [
+    {
+     "nombre": "ZERO · Reel en Instagram (diario 18:00, Shorts del día)",
+     "cuando": "2026-10-31T17:00:17.021Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8229616/edit",
+     "instagram": "https://www.instagram.com/reel/DfKpM7bDrAw/"
+    },
+    {
+     "nombre": "ZERO · Subir a YouTube programado (diario 17:00, privado hasta el día siguiente)",
+     "cuando": "2026-10-31T16:00:15.981Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8108361/edit"
+    },
+    {
+     "nombre": "Render",
+     "cuando": "2026-10-31T09:31:04Z",
+     "origen": "GitHub",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://github.com/tuamigodelasfinanzas/zero-understands/actions/runs/41188917934",
+     "post": null
+    },
+    {
+     "nombre": "ZERO · Subir a YouTube programado (diario 17:00, privado hasta el día siguiente)",
+     "cuando": "2026-10-30T16:00:22.306Z",
+     "origen": "Make",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://eu1.make.com/8964207/scenarios/8108361/edit"
+    },
+    {
+     "nombre": "Render",
+     "cuando": "2026-10-30T09:43:13Z",
+     "origen": "GitHub",
+     "estado": "ok",
+     "error": null,
+     "enlace": "https://github.com/tuamigodelasfinanzas/zero-understands/actions/runs/41035299398",
+     "post": null
+    }
+   ]
+  }
+ ],
+ "propuestas_abiertas": 4,
+ "errores_recogida": []
+}
